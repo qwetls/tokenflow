@@ -2706,6 +2706,8 @@
     "Get one here": "Obtenir ici",
     "Get started": "Commencer",
     "Get Started": "Commencer",
+    "Self-hosted": "Auto-hébergé",
+    "Runs on your own servers. Your data never leaves your machine.": "Tourne sur vos propres serveurs. Vos données ne quittent jamais votre machine.",
     "Plug in one API key and call every model — GPT, Claude, Gemini, DeepSeek — from a single endpoint. Pay only for the tokens you burn. No plans, no lock-in, no surprises.": "Branchez une clé API et appelez tous les modèles — GPT, Claude, Gemini, DeepSeek — depuis un seul endpoint. Vous ne payez que les tokens réellement consommés. Pas de forfait, pas d’enfermement, pas de surprises.",
     "providers ready to go": "fournisseurs prêts à l’emploi",
     "models you can sell": "modèles que vous pouvez revendre",

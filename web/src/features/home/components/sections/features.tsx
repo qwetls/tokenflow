@@ -24,7 +24,7 @@ import {
   Gauge,
   DollarSign,
   Users,
-  HeartHandshake,
+  Server,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -151,10 +151,10 @@ export function Features(_props: FeaturesProps) {
       ),
     },
     {
-      icon: <HeartHandshake className='size-5' strokeWidth={1.5} />,
-      title: t('Open Source'),
+      icon: <Server className='size-5' strokeWidth={1.5} />,
+      title: t('Self-hosted'),
       desc: t(
-        "Read the code, self-host it, change it. It's yours as much as ours."
+        'Runs on your own servers. Your data never leaves your machine.'
       ),
     },
   ]
