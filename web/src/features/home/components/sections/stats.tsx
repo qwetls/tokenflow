@@ -105,18 +105,23 @@ export function Stats(_props: StatsProps) {
   ]
 
   return (
-    <div className='border-border/40 bg-muted/10 relative z-10 border-y'>
-      <div className='mx-auto max-w-6xl px-6 py-10 md:py-12'>
-        <div className='grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12'>
-          {stats.map((s) => (
+    <div className='relative z-10'>
+      <div className='mx-auto max-w-6xl px-6 py-12 md:py-16'>
+        <div className='grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4'>
+          {stats.map((s, i) => (
             <div
               key={s.label}
-              className='flex flex-col items-center text-center'
+              className={`tf-rule-t flex flex-col items-start pt-4 ${
+                i > 0 ? 'tf-col-rule' : ''
+              }`}
             >
-              <span className='text-2xl font-bold tracking-tight md:text-3xl'>
+              <span className='tf-mono mb-3 text-[10px] opacity-60'>
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className='tf-display text-4xl tabular-nums md:text-5xl'>
                 <Counter end={s.end} suffix={s.suffix} decimals={s.decimals} />
               </span>
-              <span className='text-muted-foreground mt-1.5 text-xs'>
+              <span className='tf-mono mt-3 text-[11px] opacity-70'>
                 {s.label}
               </span>
             </div>

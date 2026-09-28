@@ -26,7 +26,7 @@ export function HowItWorks() {
 
   const steps = [
     {
-      num: '1',
+      num: '01',
       title: t('Configure'),
       desc: t(
         'Add your API keys, set up channels and configure access permissions'
@@ -34,7 +34,7 @@ export function HowItWorks() {
       icon: <Settings className='size-6' strokeWidth={1.5} />,
     },
     {
-      num: '2',
+      num: '02',
       title: t('Connect'),
       desc: t(
         'Connect through OpenAI, Claude, Gemini, and other compatible API routes'
@@ -42,7 +42,7 @@ export function HowItWorks() {
       icon: <Zap className='size-6' strokeWidth={1.5} />,
     },
     {
-      num: '3',
+      num: '03',
       title: t('Monitor'),
       desc: t('Track usage, costs and performance with real-time analytics'),
       icon: <BarChart3 className='size-6' strokeWidth={1.5} />,
@@ -50,35 +50,32 @@ export function HowItWorks() {
   ]
 
   return (
-    <section className='border-border/40 relative z-10 border-t px-6 py-24 md:py-32'>
-      <div className='mx-auto max-w-6xl'>
-        <AnimateInView className='mb-16 text-center md:mb-20'>
-          <p className='text-muted-foreground mb-3 text-xs font-medium tracking-widest uppercase'>
-            {t('How It Works')}
+    <section className='tf-rule-t relative z-10'>
+      <div className='mx-auto max-w-6xl px-6 py-24 md:py-32'>
+        <AnimateInView className='mb-14'>
+          <p className='tf-mono mb-4 text-[11px] opacity-60'>
+            FIG.03 — HOW IT WORKS
           </p>
-          <h2 className='text-2xl font-bold tracking-tight md:text-3xl'>
+          <h2 className='tf-display text-[clamp(2rem,5vw,3.75rem)]'>
             {t('Three steps to get started')}
           </h2>
         </AnimateInView>
 
-        <div className='grid gap-8 md:grid-cols-3 md:gap-12'>
+        <div className='grid gap-10 md:grid-cols-3 md:gap-0'>
           {steps.map((step, i) => (
             <AnimateInView
               key={step.num}
               delay={i * 150}
               animation='fade-up'
-              className='relative flex flex-col items-center text-center'
+              className={`flex flex-col items-start ${i > 0 ? 'tf-col-rule md:pl-8' : ''}`}
             >
-              <div className='relative mb-6'>
-                <div className='text-muted-foreground border-border/50 bg-muted/30 flex size-16 items-center justify-center rounded-2xl border transition-colors'>
-                  {step.icon}
-                </div>
-                <div className='bg-foreground text-background absolute -top-2 -right-2 flex size-6 items-center justify-center rounded-full text-xs font-bold'>
-                  {step.num}
-                </div>
+              <div className='mb-5 flex items-center gap-3'>
+                <span className='tf-display text-3xl'>{step.num}</span>
+                <span className='h-px w-10 bg-[var(--tf-rule)]' />
               </div>
-              <h3 className='mb-2 text-base font-semibold'>{step.title}</h3>
-              <p className='text-muted-foreground max-w-[240px] text-sm leading-relaxed'>
+              <div className='mb-4'>{step.icon}</div>
+              <h3 className='tf-mono mb-2 text-[12px]'>{step.title}</h3>
+              <p className='max-w-[260px] text-[13px] leading-relaxed opacity-70'>
                 {step.desc}
               </p>
             </AnimateInView>

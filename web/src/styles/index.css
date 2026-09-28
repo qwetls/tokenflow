@@ -26,6 +26,11 @@ For commercial licensing, please contact support@quantumnous.com
  * that activates it. Loaded globally so font-switching is instantaneous
  * with no FOUT once the variable is fetched. */
 @import '@fontsource-variable/lora';
+/* Brutalist landing voices — Space Grotesk drives the oversized display
+ * headings and Space Mono the technical metadata labels on the public
+ * landing page (see features/home/landing.css). */
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource/space-mono';
 
 @import './theme.css';
 @import './theme-presets.css';
