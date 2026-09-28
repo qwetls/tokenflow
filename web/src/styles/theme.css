@@ -93,8 +93,15 @@ For commercial licensing, please contact support@quantumnous.com
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ── Minimal (default design system) ──────────────────────────────────────
+ * Monochrome surfaces, ink-on-paper contrast and hairline dividers.
+ * The single "color" statement is the near-black primary (white in dark
+ * mode) — every supporting role is a neutral step. Semantic hues
+ * (success / warning / destructive / info) keep just enough chroma to
+ * stay readable as status, nothing more. Charts run a gray ramp with two
+ * barely-tinted series so multi-series data stays distinguishable. */
 :root {
-  --radius: 1rem;
+  --radius: 0.5rem;
   --app-header-height: 3rem;
   /* Static build-channel fallback consumed when JS hasn't booted yet. */
   --app-rev: '2k6e8r7p';
@@ -104,49 +111,49 @@ For commercial licensing, please contact support@quantumnous.com
    * identical when no font preference is set. */
   --font-body: var(--font-sans);
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.16 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.16 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.692 0.141 243.716);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0 0);
-  --secondary-foreground: oklch(0.42 0.16 250);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.49 0 0);
-  --accent: color-mix(in oklch, var(--primary) 12%, var(--background));
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --popover-foreground: oklch(0.16 0 0);
+  --primary: oklch(0.21 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.963 0 0);
+  --secondary-foreground: oklch(0.21 0 0);
+  --muted: oklch(0.966 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.955 0 0);
+  --accent-foreground: oklch(0.16 0 0);
+  --destructive: oklch(0.55 0.19 27);
   --destructive-foreground: oklch(0.985 0 0);
-  --success: oklch(0.596 0.145 163.225);
+  --success: oklch(0.51 0.11 155);
   --success-foreground: oklch(0.985 0 0);
-  --warning: oklch(0.681 0.162 75.834);
-  --warning-foreground: oklch(0.145 0 0);
-  --info: oklch(0.588 0.158 241.966);
+  --warning: oklch(0.55 0.1 75);
+  --warning-foreground: oklch(0.985 0 0);
+  --info: oklch(0.5 0.09 240);
   --info-foreground: oklch(0.985 0 0);
-  --neutral: oklch(0.708 0 0);
-  --neutral-foreground: oklch(0.145 0 0);
-  --border: oklch(0.93 0 0);
-  --input: oklch(0.93 0 0);
-  --ring: oklch(0.708 0.16 249.003);
-  --chart-1: oklch(0.72 0.18 250);
-  --chart-2: oklch(0.65 0.15 200);
-  --chart-3: oklch(0.7 0.12 280);
-  --chart-4: oklch(0.68 0.19 325);
-  --chart-5: oklch(0.68 0.16 155);
-  --overview-accent-1: oklch(0.72 0.18 250);
-  --overview-accent-2: oklch(0.65 0.15 200);
-  --overview-accent-3: oklch(0.7 0.12 280);
-  --sidebar: color-mix(in oklch, var(--foreground) 0.5%, var(--background));
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.64 0.197 253.892);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: color-mix(in oklch, var(--primary) 12%, var(--background));
-  --sidebar-accent-foreground: oklch(0.579 0.196 255.909);
-  --sidebar-border: oklch(0.93 0 0);
-  --sidebar-ring: oklch(0.58 0.2 250);
-  --skeleton-base: oklch(0.97 0 0);
+  --neutral: oklch(0.5 0 0);
+  --neutral-foreground: oklch(0.985 0 0);
+  --border: oklch(0.906 0 0);
+  --input: oklch(0.876 0 0);
+  --ring: oklch(0.32 0 0);
+  --chart-1: oklch(0.24 0 0);
+  --chart-2: oklch(0.45 0 0);
+  --chart-3: oklch(0.62 0 0);
+  --chart-4: oklch(0.55 0.05 250);
+  --chart-5: oklch(0.55 0.05 160);
+  --overview-accent-1: oklch(0.24 0 0);
+  --overview-accent-2: oklch(0.62 0 0);
+  --overview-accent-3: oklch(0.45 0 0);
+  --sidebar: oklch(0.988 0 0);
+  --sidebar-foreground: oklch(0.16 0 0);
+  --sidebar-primary: oklch(0.21 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.94 0 0);
+  --sidebar-accent-foreground: oklch(0.16 0 0);
+  --sidebar-border: oklch(0.906 0 0);
+  --sidebar-ring: oklch(0.32 0 0);
+  --skeleton-base: oklch(0.955 0 0);
   --skeleton-highlight: oklch(0.985 0 0);
   --table-row: var(--background);
   --table-header: color-mix(
@@ -179,49 +186,49 @@ For commercial licensing, please contact support@quantumnous.com
 }
 
 .dark {
-  /* OpenAI-like dark mode with a crisp charcoal canvas. */
-  --background: oklch(0.235 0 0);
-  --foreground: oklch(0.965 0 0);
-  --card: oklch(0.285 0 0);
-  --card-foreground: oklch(0.965 0 0);
-  --popover: oklch(0.305 0 0);
-  --popover-foreground: oklch(0.965 0 0);
-  --primary: oklch(0.54 0.142 248.516);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.335 0 0);
-  --secondary-foreground: oklch(0.9 0.05 250);
-  --muted: oklch(0.305 0 0);
-  --muted-foreground: oklch(0.78 0 0);
-  --accent: color-mix(in oklch, var(--primary) 20%, var(--background));
-  --accent-foreground: oklch(0.985 0 0);
+  /* Minimal dark: deep neutral charcoal canvas, inverted ink primary. */
+  --background: oklch(0.17 0 0);
+  --foreground: oklch(0.955 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.955 0 0);
+  --popover: oklch(0.225 0 0);
+  --popover-foreground: oklch(0.955 0 0);
+  --primary: oklch(0.94 0 0);
+  --primary-foreground: oklch(0.185 0 0);
+  --secondary: oklch(0.26 0 0);
+  --secondary-foreground: oklch(0.955 0 0);
+  --muted: oklch(0.245 0 0);
+  --muted-foreground: oklch(0.71 0 0);
+  --accent: oklch(0.27 0 0);
+  --accent-foreground: oklch(0.97 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
-  --success: oklch(0.696 0.17 162.48);
-  --success-foreground: oklch(0.145 0 0);
-  --warning: oklch(0.769 0.188 70.08);
-  --warning-foreground: oklch(0.145 0 0);
-  --info: oklch(0.613 0.14 239.919);
-  --info-foreground: oklch(0.145 0 0);
-  --neutral: oklch(0.76 0 0);
-  --neutral-foreground: oklch(0.155 0 0);
+  --success: oklch(0.72 0.15 162);
+  --success-foreground: oklch(0.16 0 0);
+  --warning: oklch(0.79 0.15 75);
+  --warning-foreground: oklch(0.16 0 0);
+  --info: oklch(0.7 0.11 240);
+  --info-foreground: oklch(0.16 0 0);
+  --neutral: oklch(0.71 0 0);
+  --neutral-foreground: oklch(0.16 0 0);
   --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 17%);
-  --ring: oklch(0.554 0.148 250.726);
-  --chart-1: oklch(0.76 0.14 250);
-  --chart-2: oklch(0.76 0.13 200);
-  --chart-3: oklch(0.76 0.13 285);
-  --chart-4: oklch(0.75 0.16 325);
-  --chart-5: oklch(0.76 0.14 155);
-  --sidebar: oklch(0.225 0 0);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.588 0.123 246.488);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: color-mix(in oklch, var(--primary) 20%, var(--background));
-  --sidebar-accent-foreground: oklch(0.9 0.05 250);
-  --sidebar-border: oklch(1 0 0 / 11%);
-  --sidebar-ring: oklch(0.7 0.17 250);
-  --skeleton-base: oklch(0.335 0 0);
-  --skeleton-highlight: oklch(0.44 0 0);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.75 0 0);
+  --chart-1: oklch(0.92 0 0);
+  --chart-2: oklch(0.68 0 0);
+  --chart-3: oklch(0.5 0 0);
+  --chart-4: oklch(0.65 0.05 250);
+  --chart-5: oklch(0.65 0.05 160);
+  --sidebar: oklch(0.155 0 0);
+  --sidebar-foreground: oklch(0.94 0 0);
+  --sidebar-primary: oklch(0.94 0 0);
+  --sidebar-primary-foreground: oklch(0.185 0 0);
+  --sidebar-accent: oklch(0.24 0 0);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.75 0 0);
+  --skeleton-base: oklch(0.26 0 0);
+  --skeleton-highlight: oklch(0.35 0 0);
   --table-row: var(--background);
   --table-header: color-mix(in oklch, var(--foreground) 6%, var(--background));
   --table-header-hover: color-mix(

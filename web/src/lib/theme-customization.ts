@@ -25,8 +25,17 @@ For commercial licensing, please contact support@quantumnous.com
 
 export const THEME_PRESETS = [
   {
+    // Minimal monochrome system — ink-on-paper with hairline dividers.
+    // Swatches preview the near-black primary against a light neutral step.
     value: 'default',
-    name: 'Default',
+    name: 'Minimal',
+    swatches: ['oklch(0.21 0 0)', 'oklch(0.62 0 0)'],
+  },
+  {
+    // The upstream new-api default look (blue accent, soft 1rem radius)
+    // preserved as a preset for users who prefer the original feel.
+    value: 'classic',
+    name: 'Classic',
     swatches: ['oklch(0.72 0.18 250)', 'oklch(0.7 0.12 280)'],
   },
   {

@@ -32,6 +32,105 @@ For commercial licensing, please contact support@quantumnous.com
  *   blocks so an explicit user choice overrides the preset's default radius.
  */
 
+/* ── Classic ──────────────────────────────────────────────────────────── */
+/* Restores the upstream new-api default look (blue accent, soft 1rem
+ * radius, OpenAI-like charcoal dark mode) that shipped before this fork
+ * adopted the Minimal system as its base. Excluded from the semantic
+ * surface bridge below so surfaces stay exactly as the original `:root`
+ * tokens defined them. */
+[data-theme-preset='classic'] {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.692 0.141 243.716);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.42 0.16 250);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.49 0 0);
+  --accent: color-mix(in oklch, var(--primary) 12%, var(--background));
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: oklch(0.596 0.145 163.225);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.681 0.162 75.834);
+  --warning-foreground: oklch(0.145 0 0);
+  --info: oklch(0.588 0.158 241.966);
+  --info-foreground: oklch(0.985 0 0);
+  --neutral: oklch(0.708 0 0);
+  --neutral-foreground: oklch(0.145 0 0);
+  --border: oklch(0.93 0 0);
+  --input: oklch(0.93 0 0);
+  --ring: oklch(0.708 0.16 249.003);
+  --chart-1: oklch(0.72 0.18 250);
+  --chart-2: oklch(0.65 0.15 200);
+  --chart-3: oklch(0.7 0.12 280);
+  --chart-4: oklch(0.68 0.19 325);
+  --chart-5: oklch(0.68 0.16 155);
+  --overview-accent-1: oklch(0.72 0.18 250);
+  --overview-accent-2: oklch(0.65 0.15 200);
+  --overview-accent-3: oklch(0.7 0.12 280);
+  --sidebar: color-mix(in oklch, var(--foreground) 0.5%, var(--background));
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.64 0.197 253.892);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: color-mix(in oklch, var(--primary) 12%, var(--background));
+  --sidebar-accent-foreground: oklch(0.579 0.196 255.909);
+  --sidebar-border: oklch(0.93 0 0);
+  --sidebar-ring: oklch(0.58 0.2 250);
+  --skeleton-base: oklch(0.97 0 0);
+  --skeleton-highlight: oklch(0.985 0 0);
+  --radius: 1rem;
+}
+.dark [data-theme-preset='classic'] {
+  --background: oklch(0.235 0 0);
+  --foreground: oklch(0.965 0 0);
+  --card: oklch(0.285 0 0);
+  --card-foreground: oklch(0.965 0 0);
+  --popover: oklch(0.305 0 0);
+  --popover-foreground: oklch(0.965 0 0);
+  --primary: oklch(0.54 0.142 248.516);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.335 0 0);
+  --secondary-foreground: oklch(0.9 0.05 250);
+  --muted: oklch(0.305 0 0);
+  --muted-foreground: oklch(0.78 0 0);
+  --accent: color-mix(in oklch, var(--primary) 20%, var(--background));
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: oklch(0.696 0.17 162.48);
+  --success-foreground: oklch(0.145 0 0);
+  --warning: oklch(0.769 0.188 70.08);
+  --warning-foreground: oklch(0.145 0 0);
+  --info: oklch(0.613 0.14 239.919);
+  --info-foreground: oklch(0.145 0 0);
+  --neutral: oklch(0.76 0 0);
+  --neutral-foreground: oklch(0.155 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 17%);
+  --ring: oklch(0.554 0.148 250.726);
+  --chart-1: oklch(0.76 0.14 250);
+  --chart-2: oklch(0.76 0.13 200);
+  --chart-3: oklch(0.76 0.13 285);
+  --chart-4: oklch(0.75 0.16 325);
+  --chart-5: oklch(0.76 0.14 155);
+  --sidebar: oklch(0.225 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.588 0.123 246.488);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: color-mix(in oklch, var(--primary) 20%, var(--background));
+  --sidebar-accent-foreground: oklch(0.9 0.05 250);
+  --sidebar-border: oklch(1 0 0 / 11%);
+  --sidebar-ring: oklch(0.7 0.17 250);
+  --skeleton-base: oklch(0.335 0 0);
+  --skeleton-highlight: oklch(0.44 0 0);
+}
+
 /* ── Underground ──────────────────────────────────────────────────────── */
 [data-theme-preset='underground'] {
   --primary: oklch(0.5315 0.0694 156.19);
@@ -422,14 +521,18 @@ For commercial licensing, please contact support@quantumnous.com
  * either match that specificity or opt out here — the latter is cleaner.
  *
  * Opt-outs:
- *   - `default`: keeps neutral surfaces from :root.
+ *   - `default`: keeps neutral surfaces from :root (the Minimal system).
+ *   - `classic`: restores the upstream default's exact neutral surfaces —
+ *     a preservation choice, not a primary-mix derivation.
  *   - `anthropic`: warm cream surfaces are a brand choice, NOT a primary-mix
  *     derivation (the Anthropic system deliberately uses warm neutrals for
  *     cards/borders rather than tinting them with the clay accent).
  *   - `simple-large`: keeps intentionally neutral, high-contrast surfaces. */
 [data-theme-preset]:not([data-theme-preset='default']):not(
-  [data-theme-preset='anthropic']
-):not([data-theme-preset='simple-large']) {
+  [data-theme-preset='classic']
+):not([data-theme-preset='anthropic']):not(
+  [data-theme-preset='simple-large']
+) {
   --card: color-mix(in oklch, var(--primary) 3%, var(--background));
   --popover: color-mix(in oklch, var(--primary) 5%, var(--background));
   --muted: color-mix(in oklch, var(--primary) 7%, var(--background));
@@ -453,8 +556,10 @@ For commercial licensing, please contact support@quantumnous.com
 }
 .dark
   [data-theme-preset]:not([data-theme-preset='default']):not(
-    [data-theme-preset='anthropic']
-  ):not([data-theme-preset='simple-large']) {
+    [data-theme-preset='classic']
+  ):not([data-theme-preset='anthropic']):not(
+    [data-theme-preset='simple-large']
+  ) {
   --card: color-mix(in oklch, var(--primary) 8%, var(--background));
   --popover: color-mix(in oklch, var(--primary) 12%, var(--background));
   --muted: color-mix(in oklch, var(--primary) 12%, var(--background));
