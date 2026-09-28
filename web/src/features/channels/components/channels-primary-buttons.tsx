@@ -26,6 +26,7 @@ import {
   TestTube,
   DollarSign,
   ListChecks,
+  MonitorSmartphone,
   SortAsc,
   RefreshCw,
   ArrowUpFromLine,
@@ -174,34 +175,41 @@ export function ChannelsPrimaryButtons() {
           )}
         </Tooltip>
 
-        {/* Connect Antigravity — OAuth login creates the channel directly */}
+        {/* Connect IDE — OAuth login creates the channel directly. One menu
+            entry per supported IDE tool; Antigravity is the first. */}
         {canEditSensitive && (
-          <Button
-            variant='outline'
-            size='sm'
-            onClick={async () => {
-              try {
-                const res = await api.get('/api/antigravity/oauth/login')
-                const url = res?.data?.data?.url
-                if (url) {
-                  window.open(url, '_blank')
-                  toast.info(
-                    t(
-                      'Complete the Google login — the Antigravity channel will appear here automatically.'
-                    ),
-                    { duration: 8000 }
-                  )
-                }
-              } catch {
-                // surfaced by the global API error handler
-              }
-            }}
-          >
-            <span className='max-sm:hidden'>
-              {t('Connect Antigravity (Google)')}
-            </span>
-            <span className='sm:hidden'>{t('Connect')}</span>
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              render={<Button variant='outline' size='sm' />}
+            >
+              <MonitorSmartphone className='h-4 w-4' />
+              <span className='max-sm:hidden'>{t('Connect IDE')}</span>
+              <span className='sm:hidden'>{t('Connect')}</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align='start' className='w-56'>
+              <DropdownMenuItem
+                onClick={async () => {
+                  try {
+                    const res = await api.get('/api/antigravity/oauth/login')
+                    const url = res?.data?.data?.url
+                    if (url) {
+                      window.open(url, '_blank')
+                      toast.info(
+                        t(
+                          'Complete the Google login — the Antigravity channel will appear here automatically.'
+                        ),
+                        { duration: 8000 }
+                      )
+                    }
+                  } catch {
+                    // surfaced by the global API error handler
+                  }
+                }}
+              >
+                {t('Antigravity (Google)')}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         )}
 
         {/* More Actions */}
