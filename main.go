@@ -132,6 +132,9 @@ func main() {
 	// Codex credential auto-refresh check every 10 minutes, refresh when expires within 1 day
 	service.StartCodexCredentialAutoRefreshTask()
 
+	// Antigravity (Google IDE) credential auto-refresh check every 10 minutes, refresh when expires within 30 minutes
+	service.StartAntigravityCredentialAutoRefreshTask()
+
 	// Subscription quota reset task (daily/weekly/monthly/custom)
 	service.StartSubscriptionQuotaResetTask()
 
