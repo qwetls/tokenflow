@@ -18,6 +18,7 @@ import (
 	"github.com/QuantumNous/new-api/relay/channel/antigravity"
 
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 )
 
 // OAuth client credentials embedded in the Antigravity IDE distribution.
@@ -202,14 +203,18 @@ func AntigravityOAuthCallback(c *gin.Context) {
 		}
 	}
 
+	// Accounts without a provisioned Cloud Code Assist project (free/new)
+	// never return one from loadCodeAssist. Mirroring the Antigravity
+	// ecosystem's behavior, the backend accepts a client-generated project
+	// identifier — generate one instead of failing the login.
+	if key.ProjectID == "" {
+		key.ProjectID = generateAntigravityProjectID()
+	}
+
 	// 3. Create the channel.
 	name := "Antigravity"
 	if key.Email != "" {
 		name = "Antigravity — " + key.Email
-	}
-	if key.ProjectID == "" {
-		c.String(http.StatusBadGateway, "Antigravity OAuth: login succeeded but no Cloud Code Assist project was returned. Try again or check the account's eligibility.")
-		return
 	}
 
 	keyJSON, _ := common.Marshal(key)
@@ -261,6 +266,18 @@ func extractAntigravityProject(body map[string]any) (projectID string, tier stri
 		}
 	}
 	return projectID, tier
+}
+
+// generateAntigravityProjectID produces a client-side project identifier for
+// accounts without a provisioned Cloud Code Assist project, matching the
+// format the Antigravity backend accepts (adjective-noun-<uuid prefix>).
+func generateAntigravityProjectID() string {
+	adjectives := []string{"useful", "bright", "swift", "calm", "bold"}
+	nouns := []string{"fuze", "wave", "spark", "flow", "core"}
+	pick := func(list []string) string {
+		return list[common.GetRandomInt(len(list))]
+	}
+	return fmt.Sprintf("%s-%s-%s", pick(adjectives), pick(nouns), uuid.New().String()[:5])
 }
 
 func antigravityOnboard(loadHeaders map[string]string, tier string, metadata map[string]any) {
