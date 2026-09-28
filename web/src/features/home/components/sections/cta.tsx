@@ -36,37 +36,40 @@ export function CTA(props: CTAProps) {
   }
 
   return (
-    <section className='tf-rule-t relative z-10'>
+    <section className='relative z-10'>
       <div className='mx-auto max-w-6xl px-6 py-24 md:py-32'>
         <AnimateInView>
-          <p className='tf-mono mb-6 text-[11px] opacity-60'>
-            FIG.04 — GET ACCESS
-          </p>
-          <h2 className='tf-display text-[clamp(2.5rem,7vw,5.5rem)]'>
-            {t('Start routing.')}
-            <br />
-            <span className='tf-outline'>{t('Today.')}</span>
-          </h2>
-          <p className='mt-8 max-w-md text-[15px] leading-relaxed'>
-            {t(
-              'Grab a key, make your first call, and be done before your coffee cools. Cheap to try, easy to stay.'
-            )}
-          </p>
-          <div className='mt-10 flex flex-wrap items-center gap-3'>
-            <Button
-              className='tf-mono group h-12 rounded-none border border-[var(--tf-ink)] bg-[var(--tf-acid)] px-6 text-[12px] text-[oklch(0.175_0_0)] hover:bg-[var(--tf-acid)]'
-              render={<Link to='/sign-up' />}
-            >
-              {t('Get Started')}
-              <ArrowRight className='ml-1.5 size-4' />
-            </Button>
-            <Button
-              variant='outline'
-              className='tf-mono h-12 rounded-none border-[var(--tf-ink)] bg-transparent px-6 text-[12px] text-[var(--tf-ink)] hover:bg-[var(--tf-ink)] hover:text-[var(--tf-paper)] dark:bg-transparent'
-              render={<Link to='/pricing' />}
-            >
-              {t('View Pricing')}
-            </Button>
+          <div className='relative overflow-hidden rounded-3xl border border-border bg-card px-8 py-16 text-center md:py-20'>
+            <div
+              aria-hidden
+              className='absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_-10%,oklch(0.7_0.12_250/10%),transparent_70%)]'
+            />
+            <div className='relative'>
+              <h2 className='mx-auto max-w-xl text-3xl font-bold tracking-tight text-balance md:text-5xl'>
+                {t('Start routing.')} {t('Today.')}
+              </h2>
+              <p className='text-muted-foreground mx-auto mt-5 max-w-md text-base leading-relaxed'>
+                {t(
+                  'Grab a key, make your first call, and be done before your coffee cools. Cheap to try, easy to stay.'
+                )}
+              </p>
+              <div className='mt-9 flex flex-wrap items-center justify-center gap-3'>
+                <Button
+                  className='group h-11 rounded-full px-6 text-sm font-medium'
+                  render={<Link to='/sign-up' />}
+                >
+                  {t('Get Started')}
+                  <ArrowRight className='ml-1.5 size-4 transition-transform duration-200 group-hover:translate-x-0.5' />
+                </Button>
+                <Button
+                  variant='outline'
+                  className='border-border h-11 rounded-full px-6 text-sm font-medium'
+                  render={<Link to='/pricing' />}
+                >
+                  {t('View Pricing')}
+                </Button>
+              </div>
+            </div>
           </div>
         </AnimateInView>
       </div>

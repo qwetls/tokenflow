@@ -2707,6 +2707,7 @@
     "Get one here": "Получить здесь",
     "Get started": "Начало работы",
     "Get Started": "Начать",
+    "Works with the models you already use": "Работает с моделями, которые вы уже используете",
     "Self-hosted": "На своём сервере",
     "Runs on your own servers. Your data never leaves your machine.": "Работает на ваших серверах. Данные не покидают вашу машину.",
     "Plug in one API key and call every model — GPT, Claude, Gemini, DeepSeek — from a single endpoint. Pay only for the tokens you burn. No plans, no lock-in, no surprises.": "Подключите один API-ключ и вызывайте любые модели — GPT, Claude, Gemini, DeepSeek — через один эндпоинт. Платите только за реально израсходованные токены. Без тарифов, без привязки, без сюрпризов.",

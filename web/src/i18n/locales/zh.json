@@ -2707,6 +2707,7 @@
     "Get one here": "点此获取",
     "Get started": "开始使用",
     "Get Started": "开始使用",
+    "Works with the models you already use": "支持你已经在用的模型",
     "Self-hosted": "私有部署",
     "Runs on your own servers. Your data never leaves your machine.": "跑在你自己的服务器上。数据永远不离开你的机器。",
     "Plug in one API key and call every model — GPT, Claude, Gemini, DeepSeek — from a single endpoint. Pay only for the tokens you burn. No plans, no lock-in, no surprises.": "接上一把 API 密钥，就能调用所有模型——GPT、Claude、Gemini、DeepSeek，全部走同一个端点。用多少 token 付多少钱。没有套餐绑定，没有锁死，也没有意外账单。",

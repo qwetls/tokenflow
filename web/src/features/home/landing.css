@@ -16,113 +16,51 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
-/* ── TokenFlow landing — Swiss-brutalist editorial system ────────────────
- * Scoped to `.tf` so the marketing page gets the paper/ink/acid look
- * while the dashboard app keeps the Minimal design tokens untouched.
- * Style references: ui-ux-pro-max "brutalism" profile (0px radius, 700+
- * weight, visible rules, high contrast) + Space Grotesk display pairing.
- */
+/* ── TokenFlow landing — Bento premium system ────────────────────────────
+ * Clean Apple/OpenAI-style presentation: generous white space, large
+ * rounded cards, the product as hero, glows kept whisper-quiet. Scoped
+ * to `.tf`; sections reuse the app's own design tokens (background,
+ * border, muted) so dark mode comes for free. Only tiny technical
+ * eyebrows keep the monospace voice. */
 .tf {
-  --tf-paper: oklch(0.968 0.006 95);
-  --tf-ink: oklch(0.175 0 0);
-  --tf-ink-soft: oklch(0.42 0 0);
-  --tf-acid: oklch(0.93 0.23 118);
-  --tf-rule: oklch(0.175 0 0 / 90%);
-
-  background: var(--tf-paper);
-  color: var(--tf-ink);
-}
-
-.dark .tf {
-  --tf-paper: oklch(0.16 0 0);
-  --tf-ink: oklch(0.955 0 0);
-  --tf-ink-soft: oklch(0.68 0 0);
-  --tf-rule: oklch(0.955 0 0 / 85%);
-}
-
-.tf ::selection {
-  background: var(--tf-acid);
-  color: oklch(0.175 0 0);
-}
-
-/* Technical monospace label — metadata, nav, captions */
-.tf-mono {
-  font-family: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas,
-    monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 400;
-}
-
-/* Oversized display heading */
-.tf-display {
-  font-family: 'Space Grotesk Variable', 'Space Grotesk', 'Public Sans',
-    sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 0.92;
-}
-
-/* Hollow display word (stroke only) */
-.tf-outline {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--tf-ink);
-}
-
-@media (min-width: 768px) {
-  .tf-outline {
-    -webkit-text-stroke-width: 3px;
+  ::selection {
+    background: oklch(0.7 0.12 250 / 25%);
   }
 }
 
-/* Acid marker highlight */
-.tf-hl {
-  background: var(--tf-acid);
-  color: oklch(0.175 0 0);
-  padding-inline: 0.3em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+/* Soft product-card shadow used across bento cells */
+.tf-card {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow:
+    0 1px 2px oklch(0 0 0 / 3%),
+    0 12px 40px -16px oklch(0 0 0 / 10%);
 }
 
-/* Ruled hairline (xeylabs grid rules) */
-.tf-rule-b {
-  border-bottom: 1px solid var(--tf-rule);
-}
-.tf-rule-t {
-  border-top: 1px solid var(--tf-rule);
-}
-/* Left rule on grid columns — desktop only (brutalist column dividers) */
-@media (min-width: 768px) {
-  .tf-col-rule {
-    border-left: 1px solid var(--tf-rule);
-    padding-left: 1.5rem;
-  }
+/* Quiet radial glow for hero/CTA canvases */
+.tf-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 60% 45% at 50% 0%,
+      oklch(0.7 0.12 250 / 7%) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 40% 35% at 80% 20%,
+      oklch(0.7 0.1 200 / 5%) 0%,
+      transparent 70%
+    );
 }
 
-/* Ticker marquee */
-.tf-marquee {
-  overflow: hidden;
-  white-space: nowrap;
-}
-.tf-marquee-track {
-  display: inline-flex;
-  align-items: center;
-  animation: tf-marquee-scroll 36s linear infinite;
-}
-.tf-marquee:hover .tf-marquee-track {
-  animation-play-state: paused;
-}
-@keyframes tf-marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 @media (prefers-reduced-motion: reduce) {
-  .tf-marquee-track {
-    animation: none;
+  .tf *,
+  .tf *::before,
+  .tf *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

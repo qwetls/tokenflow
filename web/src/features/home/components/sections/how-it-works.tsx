@@ -26,56 +26,58 @@ export function HowItWorks() {
 
   const steps = [
     {
-      num: '01',
+      num: '1',
       title: t('Configure'),
       desc: t('Paste your provider keys, name your channels. Five minutes, tops.'),
-      icon: <Settings className='size-6' strokeWidth={1.5} />,
+      icon: <Settings className='size-4' />,
     },
     {
-      num: '02',
+      num: '2',
       title: t('Connect'),
       desc: t(
         'Point your app at TokenFlow. Same OpenAI-style endpoints — no rewrites.'
       ),
-      icon: <Zap className='size-6' strokeWidth={1.5} />,
+      icon: <Zap className='size-4' />,
     },
     {
-      num: '03',
+      num: '3',
       title: t('Monitor'),
       desc: t(
         'Tokens, cost and latency, live — per key, per model. Numbers, not vibes.'
       ),
-      icon: <BarChart3 className='size-6' strokeWidth={1.5} />,
+      icon: <BarChart3 className='size-4' />,
     },
   ]
 
   return (
-    <section className='tf-rule-t relative z-10'>
+    <section className='bg-muted/30 relative z-10'>
       <div className='mx-auto max-w-6xl px-6 py-24 md:py-32'>
-        <AnimateInView className='mb-14'>
-          <p className='tf-mono mb-4 text-[11px] opacity-60'>
-            FIG.03 — HOW IT WORKS
-          </p>
-          <h2 className='tf-display text-[clamp(2rem,5vw,3.75rem)]'>
+        <AnimateInView className='mx-auto mb-14 max-w-2xl text-center'>
+          <h2 className='text-3xl font-bold tracking-tight text-balance md:text-4xl'>
             {t('Three steps to get started')}
           </h2>
         </AnimateInView>
 
-        <div className='grid gap-10 md:grid-cols-3 md:gap-0'>
+        <div className='grid gap-4 md:grid-cols-3'>
           {steps.map((step, i) => (
             <AnimateInView
               key={step.num}
-              delay={i * 150}
+              delay={i * 100}
               animation='fade-up'
-              className={`flex flex-col items-start ${i > 0 ? 'tf-col-rule md:pl-8' : ''}`}
+              className='relative rounded-2xl border border-border bg-card p-8'
             >
-              <div className='mb-5 flex items-center gap-3'>
-                <span className='tf-display text-3xl'>{step.num}</span>
-                <span className='h-px w-10 bg-[var(--tf-rule)]' />
+              <div className='flex items-center justify-between'>
+                <div className='bg-muted flex size-9 items-center justify-center rounded-lg [&_svg]:text-foreground'>
+                  {step.icon}
+                </div>
+                <span className='text-muted-foreground/30 text-4xl font-bold tabular-nums'>
+                  {step.num}
+                </span>
               </div>
-              <div className='mb-4'>{step.icon}</div>
-              <h3 className='tf-mono mb-2 text-[12px]'>{step.title}</h3>
-              <p className='max-w-[260px] text-[13px] leading-relaxed opacity-70'>
+              <h3 className='mt-6 text-base font-semibold tracking-tight'>
+                {step.title}
+              </h3>
+              <p className='text-muted-foreground mt-2 text-sm leading-relaxed'>
                 {step.desc}
               </p>
             </AnimateInView>

@@ -40,89 +40,49 @@ export function Features(_props: FeaturesProps) {
   const features = [
     {
       id: 'fast',
-      num: '01',
       title: t('Fast'),
       desc: t(
         'Milliseconds, not seconds. We obsess over routing speed so your users never wait on us.'
       ),
       span: 'md:col-span-2',
-      visual: (
-        <div className='mt-5 grid grid-cols-3 gap-2'>
-          {['OpenAI', 'Claude', 'Gemini', 'DeepSeek', 'Qwen', 'Llama'].map(
-            (name) => (
-              <div
-                key={name}
-                className='tf-mono border-[var(--tf-rule)] text-[var(--tf-ink-soft)] hover:bg-[var(--tf-acid)] hover:text-[oklch(0.175_0_0)] flex items-center justify-center border px-3 py-2 text-[10px] transition-colors'
-              >
-                {name}
-              </div>
-            )
-          )}
-        </div>
-      ),
+      icon: <Zap className='size-4' />,
     },
     {
       id: 'secure',
-      num: '02',
       title: t('Secure'),
       desc: t(
         "Your keys stay yours. Fine-grained permissions and full audit logs — nothing you didn't approve."
       ),
-      span: 'md:col-span-1',
-      visual: (
-        <div className='mt-5 flex items-center gap-2'>
-          <Shield className='size-5' strokeWidth={1.5} />
-          <span className='tf-mono text-[10px] opacity-60'>
-            PERMS / AUDIT
-          </span>
-        </div>
-      ),
+      span: '',
+      icon: <Shield className='size-4' />,
     },
     {
       id: 'global',
-      num: '03',
       title: t('Global'),
       desc: t(
         "Deployed across regions, so latency doesn't depend on where your users live."
       ),
-      span: 'md:col-span-1',
-      visual: (
-        <div className='mt-5 space-y-2'>
-          {[t('Load Balancing'), t('Rate Limiting'), t('Cost Tracking')].map(
-            (step, i) => (
-              <div key={step} className='flex items-center gap-2'>
-                <span className='tf-mono text-[10px] opacity-60'>
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div className='h-px flex-1 bg-[var(--tf-rule)]' />
-                <span className='tf-mono text-[10px]'>{step}</span>
-              </div>
-            )
-          )}
-        </div>
-      ),
+      span: '',
+      icon: <Globe className='size-4' />,
     },
     {
       id: 'developer',
-      num: '04',
       title: t('Developer-first'),
       desc: t(
         'Used the OpenAI SDK before? Then you already know TokenFlow. Change the base URL — done.'
       ),
       span: 'md:col-span-2',
+      icon: <Code className='size-4' />,
       visual: (
-        <div className='mt-5 flex items-center gap-3'>
-          {['API', 'SDK', 'CLI', 'DOCS'].map((n) => (
-            <div
-              key={n}
-              className='tf-mono border-[var(--tf-rule)] text-[var(--tf-ink-soft)] flex items-center justify-center border px-2.5 py-1.5 text-[10px]'
+        <div className='mt-6 flex flex-wrap items-center gap-2'>
+          {['OpenAI', 'Claude', 'Gemini', 'DeepSeek'].map((name) => (
+            <span
+              key={name}
+              className='bg-muted text-muted-foreground rounded-full px-3.5 py-1.5 text-xs'
             >
-              {n}
-            </div>
+              {name}
+            </span>
           ))}
-          <span className='tf-mono text-[10px] opacity-60'>
-            MULTI-PROTOCOL
-          </span>
         </div>
       ),
     },
@@ -130,28 +90,28 @@ export function Features(_props: FeaturesProps) {
 
   const additionalFeatures = [
     {
-      icon: <Gauge className='size-5' strokeWidth={1.5} />,
+      icon: <Gauge className='size-4' />,
       title: t('Handles the crowd'),
       desc: t(
         'Spikes, bursts, a launch-day rush — load balancing spreads traffic automatically.'
       ),
     },
     {
-      icon: <DollarSign className='size-5' strokeWidth={1.5} />,
+      icon: <DollarSign className='size-4' />,
       title: t('Honest billing'),
       desc: t(
         "Every token and every cent, visible in real time. No mystery charges at month's end."
       ),
     },
     {
-      icon: <Users className='size-5' strokeWidth={1.5} />,
+      icon: <Users className='size-4' />,
       title: t('Built for teams'),
       desc: t(
         'Add teammates, set budgets per person, revoke access in one click when someone leaves.'
       ),
     },
     {
-      icon: <Server className='size-5' strokeWidth={1.5} />,
+      icon: <Server className='size-4' />,
       title: t('Self-hosted'),
       desc: t(
         'Runs on your own servers. Your data never leaves your machine.'
@@ -160,37 +120,33 @@ export function Features(_props: FeaturesProps) {
   ]
 
   return (
-    <section className='tf-rule-t relative z-10'>
+    <section className='relative z-10'>
       <div className='mx-auto max-w-6xl px-6 py-24 md:py-32'>
-        <AnimateInView className='mb-14'>
-          <p className='tf-mono mb-4 text-[11px] opacity-60'>
-            FIG.02 — CORE FEATURES
-          </p>
-          <h2 className='tf-display text-[clamp(2rem,5vw,3.75rem)]'>
-            {t('Built for developers,')}
-            <br />
-            <span className='tf-outline'>{t('designed for scale')}</span>
+        <AnimateInView className='mx-auto mb-14 max-w-2xl text-center'>
+          <h2 className='text-3xl font-bold tracking-tight text-balance md:text-4xl'>
+            {t('Built for developers,')}{' '}
+            <span className='text-muted-foreground'>
+              {t('designed for scale')}
+            </span>
           </h2>
         </AnimateInView>
 
-        {/* Bento grid with visible rules */}
-        <div className='grid gap-px overflow-hidden border border-[var(--tf-rule)] bg-[var(--tf-rule)] md:grid-cols-3'>
+        {/* Bento grid */}
+        <div className='grid gap-4 md:grid-cols-3'>
           {features.map((f, i) => (
             <AnimateInView
               key={f.id}
-              delay={i * 100}
-              animation='scale-in'
-              className={`group bg-[var(--tf-paper)] p-7 transition-colors duration-200 md:p-8 ${f.span}`}
+              delay={i * 80}
+              animation='fade-up'
+              className={`group rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_16px_48px_-16px_oklch(0_0_0/12%)] md:p-8 ${f.span}`}
             >
-              <div className='mb-3 flex items-center gap-3'>
-                <span className='tf-mono border border-[var(--tf-rule)] px-1.5 py-0.5 text-[10px] tabular-nums'>
-                  {f.num}
-                </span>
-                <h3 className='text-sm font-bold tracking-tight uppercase'>
-                  {f.title}
-                </h3>
+              <div className='bg-muted mb-5 flex size-9 items-center justify-center rounded-lg [&_svg]:text-foreground'>
+                {f.icon}
               </div>
-              <p className='text-[13px] leading-relaxed opacity-70'>
+              <h3 className='text-base font-semibold tracking-tight'>
+                {f.title}
+              </h3>
+              <p className='text-muted-foreground mt-2 text-sm leading-relaxed'>
                 {f.desc}
               </p>
               {f.visual}
@@ -198,18 +154,22 @@ export function Features(_props: FeaturesProps) {
           ))}
         </div>
 
-        {/* Additional features row */}
-        <div className='mt-14 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4'>
+        {/* Supporting row */}
+        <div className='mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
           {additionalFeatures.map((f, i) => (
             <AnimateInView
               key={f.title}
-              delay={i * 100}
+              delay={i * 80}
               animation='fade-up'
-              className='tf-rule-t flex flex-col items-start pt-4'
+              className='rounded-2xl border border-border bg-card p-6 transition-shadow duration-300 hover:shadow-[0_16px_48px_-16px_oklch(0_0_0/12%)]'
             >
-              <div className='mb-3'>{f.icon}</div>
-              <h3 className='tf-mono mb-1.5 text-[11px]'>{f.title}</h3>
-              <p className='max-w-[220px] text-xs leading-relaxed opacity-70'>
+              <div className='bg-muted mb-4 flex size-8 items-center justify-center rounded-lg [&_svg]:text-foreground'>
+                {f.icon}
+              </div>
+              <h3 className='text-sm font-semibold tracking-tight'>
+                {f.title}
+              </h3>
+              <p className='text-muted-foreground mt-1.5 text-xs leading-relaxed'>
                 {f.desc}
               </p>
             </AnimateInView>
