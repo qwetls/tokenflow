@@ -18,6 +18,7 @@ For commercial licensing, please contact support@quantumnous.com
 */
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { api } from '@/lib/api'
 import {
   ArrowRight,
   ArrowLeft,
@@ -4335,6 +4336,33 @@ export function ChannelMutateDrawer({
                   return (
                     <FormItem>
                       <FormLabel required>{t('API Key')}</FormLabel>
+                      {currentType === 64 && !isEditing && (
+                        <div className='border-border bg-muted/40 mb-2 rounded-lg border p-3'>
+                          <p className='text-muted-foreground mb-2 text-xs'>
+                            {t(
+                              'Recommended: login with your Google account — the channel will be created automatically.'
+                            )}
+                          </p>
+                          <Button
+                            type='button'
+                            variant='outline'
+                            size='sm'
+                            onClick={async () => {
+                              try {
+                                const res = await api.get(
+                                  '/api/antigravity/oauth/login'
+                                )
+                                const url = res?.data?.data?.url
+                                if (url) window.open(url, '_blank')
+                              } catch {
+                                // surfaced by the global API error handler
+                              }
+                            }}
+                          >
+                            {t('Login with Google (Antigravity)')}
+                          </Button>
+                        </div>
+                      )}
                       <FormControl>
                         <Textarea
                           placeholder={keyPlaceholder}

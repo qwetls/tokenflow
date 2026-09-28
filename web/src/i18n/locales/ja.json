@@ -2707,6 +2707,8 @@
     "Get one here": "こちらから取得",
     "Get started": "はじめる",
     "Get Started": "開始する",
+    "Login with Google (Antigravity)": "Googleでログイン（Antigravity）",
+    "Recommended: login with your Google account — the channel will be created automatically.": "推奨：Googleアカウントでログインすると、チャンネルが自動作成されます。",
     "Access Gemini, Claude and GPT-OSS models through an Antigravity IDE subscription": "Antigravity IDEのサブスクリプションでGemini、Claude、GPT-OSSモデルにアクセス",
     "Works with the models you already use": "いつも使っているモデルにそのまま対応",
     "Self-hosted": "セルフホスト",

@@ -20,6 +20,16 @@ func registerChannelRoutes(apiRouter *gin.RouterGroup) {
 	channelRoute := apiRouter.Group("/channel")
 	channelRoute.Use(middleware.AdminAuth())
 
+	// Antigravity (Google IDE) OAuth. The login endpoint requires the admin
+	// bearer token; the callback is a browser redirect from Google (no auth
+	// header available) and is instead authenticated by the unforgeable
+	// random `state` capability minted at login.
+	antigravityRoute := apiRouter.Group("/antigravity/oauth")
+	{
+		antigravityRoute.GET("/login", middleware.AdminAuth(), controller.AntigravityOAuthLogin)
+		antigravityRoute.GET("/callback", middleware.CriticalRateLimit(), controller.AntigravityOAuthCallback)
+	}
+
 	channelRoute.POST("/:id/key",
 		middleware.RootAuth(),
 		middleware.CriticalRateLimit(),
