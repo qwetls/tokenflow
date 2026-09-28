@@ -170,7 +170,7 @@ export function Footer(props: FooterProps) {
         links: [
           {
             text: t('footer.columns.about.links.aboutProject'),
-            href: 'https://docs.newapi.pro/wiki/project-introduction/',
+            href: '/about',
           },
           {
             text: t('footer.columns.about.links.contact'),
@@ -178,7 +178,7 @@ export function Footer(props: FooterProps) {
           },
           {
             text: t('footer.columns.about.links.features'),
-            href: 'https://docs.newapi.pro/wiki/features-introduction/',
+            href: '/pricing',
           },
         ],
       },
@@ -200,19 +200,19 @@ export function Footer(props: FooterProps) {
         ],
       },
       {
-        title: t('footer.columns.related.title'),
+        title: t('footer.columns.product.title'),
         links: [
           {
-            text: t('footer.columns.related.links.oneApi'),
-            href: 'https://github.com/songquanpeng/one-api',
+            text: t('Console'),
+            href: '/dashboard',
           },
           {
-            text: t('footer.columns.related.links.midjourney'),
-            href: 'https://github.com/novicezk/midjourney-proxy',
+            text: t('Model Square'),
+            href: '/pricing',
           },
           {
-            text: t('footer.columns.related.links.newApiKeyTool'),
-            href: 'https://github.com/Calcium-Ion/new-api-key-tool',
+            text: t('Rankings'),
+            href: '/rankings',
           },
         ],
       },
