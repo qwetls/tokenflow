@@ -33,6 +33,9 @@ import {
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { toast } from 'sonner'
+
+import { api } from '@/lib/api'
 import { ConfirmDialog } from '@/components/confirm-dialog'
 import { Button } from '@/components/ui/button'
 import {
@@ -146,6 +149,36 @@ export function ChannelsPrimaryButtons() {
             onCheckedChange={handleIdSortToggle}
           />
         </div>
+
+        {/* Connect Antigravity — OAuth login creates the channel directly */}
+        {canEditSensitive && (
+          <Button
+            variant='outline'
+            size='sm'
+            onClick={async () => {
+              try {
+                const res = await api.get('/api/antigravity/oauth/login')
+                const url = res?.data?.data?.url
+                if (url) {
+                  window.open(url, '_blank')
+                  toast.info(
+                    t(
+                      'Complete the Google login — the Antigravity channel will appear here automatically.'
+                    ),
+                    { duration: 8000 }
+                  )
+                }
+              } catch {
+                // surfaced by the global API error handler
+              }
+            }}
+          >
+            <span className='max-sm:hidden'>
+              {t('Connect Antigravity (Google)')}
+            </span>
+            <span className='sm:hidden'>{t('Connect')}</span>
+          </Button>
+        )}
 
         {/* Create Channel */}
         <Tooltip>

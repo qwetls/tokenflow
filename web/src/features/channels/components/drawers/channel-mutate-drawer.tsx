@@ -1081,6 +1081,31 @@ export function ChannelMutateDrawer({
   useEffect(() => {
     if (isEditing) return // Don't auto-set defaults when editing
 
+    // Type 64 (Antigravity) - auto-fetch the backend's model list so the
+    // user never types models or OAuth JSON manually (9router-style flow).
+    if (currentType === 64) {
+      const currentModels = form.getValues('models')
+      if (!currentModels || currentModels.trim() === '') {
+        api
+          .get('/api/models')
+          .then((res) => {
+            const byChannel = res?.data?.data as
+              | Record<string, string[]>
+              | undefined
+            const models = byChannel?.['64']
+            if (models?.length) {
+              form.setValue('models', models.join(','), {
+                shouldDirty: true,
+                shouldValidate: true,
+              })
+            }
+          })
+          .catch(() => {
+            // non-fatal: models can be filled manually
+          })
+      }
+    }
+
     // Type 45 (VolcEngine) - set default base_url
     if (currentType === 45) {
       const currentBaseUrlValue = form.getValues('base_url')
@@ -4335,9 +4360,11 @@ export function ChannelMutateDrawer({
                   }
                   return (
                     <FormItem>
-                      <FormLabel required>{t('API Key')}</FormLabel>
-                      {currentType === 64 && !isEditing && (
-                        <div className='border-border bg-muted/40 mb-2 rounded-lg border p-3'>
+                      <FormLabel required={!(currentType === 64 && !isEditing)}>
+                        {t('API Key')}
+                      </FormLabel>
+                      {currentType === 64 && !isEditing ? (
+                        <div className='border-border bg-muted/40 rounded-lg border p-3'>
                           <p className='text-muted-foreground mb-2 text-xs'>
                             {t(
                               'Recommended: login with your Google account — the channel will be created automatically.'
@@ -4361,32 +4388,40 @@ export function ChannelMutateDrawer({
                           >
                             {t('Login with Google (Antigravity)')}
                           </Button>
+                          <p className='text-muted-foreground/70 mt-2 text-xs'>
+                            {t(
+                              'No OAuth JSON needed: credentials and the model list are filled in automatically.'
+                            )}
+                          </p>
                         </div>
+                      ) : (
+                        <>
+                          <FormControl>
+                            <Textarea
+                              placeholder={keyPlaceholder}
+                              rows={isBatchMode ? 8 : 4}
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormDescription>
+                            <span className='flex flex-col gap-2'>
+                              <span>{keyDescription}</span>
+                              {!isEditing && isBatchMode && (
+                                <Button
+                                  type='button'
+                                  variant='outline'
+                                  size='sm'
+                                  onClick={handleDeduplicateKeys}
+                                  className='w-fit'
+                                >
+                                  <Trash2 className='mr-2 h-4 w-4' />
+                                  {t('Remove Duplicates')}
+                                </Button>
+                              )}
+                            </span>
+                          </FormDescription>
+                        </>
                       )}
-                      <FormControl>
-                        <Textarea
-                          placeholder={keyPlaceholder}
-                          rows={isBatchMode ? 8 : 4}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormDescription>
-                        <span className='flex flex-col gap-2'>
-                          <span>{keyDescription}</span>
-                          {!isEditing && isBatchMode && (
-                            <Button
-                              type='button'
-                              variant='outline'
-                              size='sm'
-                              onClick={handleDeduplicateKeys}
-                              className='w-fit'
-                            >
-                              <Trash2 className='mr-2 h-4 w-4' />
-                              {t('Remove Duplicates')}
-                            </Button>
-                          )}
-                        </span>
-                      </FormDescription>
                       {isEditing && canRevealChannelKey && (
                         <div className='border-border/60 mt-4 flex flex-col gap-3 border-y border-dashed py-4'>
                           <div className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'>
