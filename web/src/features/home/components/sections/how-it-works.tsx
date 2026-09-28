@@ -28,23 +28,23 @@ export function HowItWorks() {
     {
       num: '01',
       title: t('Configure'),
-      desc: t(
-        'Add your API keys, set up channels and configure access permissions'
-      ),
+      desc: t('Paste your provider keys, name your channels. Five minutes, tops.'),
       icon: <Settings className='size-6' strokeWidth={1.5} />,
     },
     {
       num: '02',
       title: t('Connect'),
       desc: t(
-        'Connect through OpenAI, Claude, Gemini, and other compatible API routes'
+        'Point your app at TokenFlow. Same OpenAI-style endpoints — no rewrites.'
       ),
       icon: <Zap className='size-6' strokeWidth={1.5} />,
     },
     {
       num: '03',
       title: t('Monitor'),
-      desc: t('Track usage, costs and performance with real-time analytics'),
+      desc: t(
+        'Tokens, cost and latency, live — per key, per model. Numbers, not vibes.'
+      ),
       icon: <BarChart3 className='size-6' strokeWidth={1.5} />,
     },
   ]

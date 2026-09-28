@@ -41,9 +41,9 @@ export function Features(_props: FeaturesProps) {
     {
       id: 'fast',
       num: '01',
-      title: t('Lightning Fast'),
+      title: t('Fast'),
       desc: t(
-        'Optimized network architecture ensures millisecond response times'
+        'Milliseconds, not seconds. We obsess over routing speed so your users never wait on us.'
       ),
       span: 'md:col-span-2',
       visual: (
@@ -64,9 +64,9 @@ export function Features(_props: FeaturesProps) {
     {
       id: 'secure',
       num: '02',
-      title: t('Secure & Reliable'),
+      title: t('Secure'),
       desc: t(
-        'Enterprise-grade security with comprehensive permission management'
+        "Your keys stay yours. Fine-grained permissions and full audit logs — nothing you didn't approve."
       ),
       span: 'md:col-span-1',
       visual: (
@@ -81,8 +81,10 @@ export function Features(_props: FeaturesProps) {
     {
       id: 'global',
       num: '03',
-      title: t('Global Coverage'),
-      desc: t('Multi-region deployment for stable global access'),
+      title: t('Global'),
+      desc: t(
+        "Deployed across regions, so latency doesn't depend on where your users live."
+      ),
       span: 'md:col-span-1',
       visual: (
         <div className='mt-5 space-y-2'>
@@ -103,8 +105,10 @@ export function Features(_props: FeaturesProps) {
     {
       id: 'developer',
       num: '04',
-      title: t('Developer Friendly'),
-      desc: t('Compatible API routes for common AI application workflows'),
+      title: t('Developer-first'),
+      desc: t(
+        'Used the OpenAI SDK before? Then you already know TokenFlow. Change the base URL — done.'
+      ),
       span: 'md:col-span-2',
       visual: (
         <div className='mt-5 flex items-center gap-3'>
@@ -127,23 +131,31 @@ export function Features(_props: FeaturesProps) {
   const additionalFeatures = [
     {
       icon: <Gauge className='size-5' strokeWidth={1.5} />,
-      title: t('High Performance'),
-      desc: t('Support for high concurrency with automatic load balancing'),
+      title: t('Handles the crowd'),
+      desc: t(
+        'Spikes, bursts, a launch-day rush — load balancing spreads traffic automatically.'
+      ),
     },
     {
       icon: <DollarSign className='size-5' strokeWidth={1.5} />,
-      title: t('Transparent Billing'),
-      desc: t('Pay-as-you-go with real-time usage monitoring'),
+      title: t('Honest billing'),
+      desc: t(
+        "Every token and every cent, visible in real time. No mystery charges at month's end."
+      ),
     },
     {
       icon: <Users className='size-5' strokeWidth={1.5} />,
-      title: t('Team Collaboration'),
-      desc: t('Multi-user management with flexible permission allocation'),
+      title: t('Built for teams'),
+      desc: t(
+        'Add teammates, set budgets per person, revoke access in one click when someone leaves.'
+      ),
     },
     {
       icon: <HeartHandshake className='size-5' strokeWidth={1.5} />,
       title: t('Open Source'),
-      desc: t('Community driven, self-hosted, and extensible'),
+      desc: t(
+        "Read the code, self-host it, change it. It's yours as much as ours."
+      ),
     },
   ]
 

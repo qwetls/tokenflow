@@ -82,9 +82,8 @@ export function Hero(props: HeroProps) {
             style={{ animationDelay: '140ms' }}
           >
             <p className='text-[15px] leading-relaxed'>
-              <span className='font-bold'>TokenFlow</span>{' '}
               {t(
-                'is a unified marketplace for AI model APIs. Sell, route, and bill every major model through one standard endpoint.'
+                'Plug in one API key and call every model — GPT, Claude, Gemini, DeepSeek — from a single endpoint. Pay only for the tokens you burn. No plans, no lock-in, no surprises.'
               )}
             </p>
 
