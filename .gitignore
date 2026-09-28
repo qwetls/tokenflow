@@ -45,3 +45,6 @@ service/openaicompat/chat_responses_live_local_test.go
 go.work
 go.work.sum
 new-api.exe~
+
+# Legal documents (private, not part of the repo)
+legal/
