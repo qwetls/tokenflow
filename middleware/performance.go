@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/relaykit/types"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/relaykit/types"
 	"github.com/gin-gonic/gin"
 )
 

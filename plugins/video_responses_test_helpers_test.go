@@ -4,10 +4,10 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/pkg/jsplugin"
-	builtinplugins "github.com/QuantumNous/new-api/plugins"
-	"github.com/QuantumNous/new-api/relay"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/pkg/jsplugin"
+	builtinplugins "github.com/qwetls/tokenflow/plugins"
+	"github.com/qwetls/tokenflow/relay"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

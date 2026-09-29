@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/new-api/constant"
+	"github.com/qwetls/tokenflow/constant"
 )
 
 type RouteType string

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/QuantumNous/new-api/common"
+	"github.com/qwetls/tokenflow/common"
 	"github.com/gin-gonic/gin"
 )
 

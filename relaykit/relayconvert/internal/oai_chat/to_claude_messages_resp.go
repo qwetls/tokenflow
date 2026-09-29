@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/QuantumNous/new-api/relaykit/dto"
-	"github.com/QuantumNous/new-api/relaykit/reasonmap"
-	"github.com/QuantumNous/new-api/relaykit/relayconvert/convmeta"
-	sharedclaude "github.com/QuantumNous/new-api/relaykit/relayconvert/internal/shared/claude"
-	kitutil "github.com/QuantumNous/new-api/relaykit/relayconvert/kitutil"
+	"github.com/qwetls/tokenflow/relaykit/dto"
+	"github.com/qwetls/tokenflow/relaykit/reasonmap"
+	"github.com/qwetls/tokenflow/relaykit/relayconvert/convmeta"
+	sharedclaude "github.com/qwetls/tokenflow/relaykit/relayconvert/internal/shared/claude"
+	kitutil "github.com/qwetls/tokenflow/relaykit/relayconvert/kitutil"
 )
 
 func generateStopBlock(index int) *dto.ClaudeResponse {

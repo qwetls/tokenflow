@@ -3,10 +3,10 @@ package service
 import (
 	"testing"
 
-	"github.com/QuantumNous/new-api/common"
-	relaycommon "github.com/QuantumNous/new-api/relay/common"
-	"github.com/QuantumNous/new-api/relaykit/dto"
-	"github.com/QuantumNous/new-api/setting/operation_setting"
+	"github.com/qwetls/tokenflow/common"
+	relaycommon "github.com/qwetls/tokenflow/relay/common"
+	"github.com/qwetls/tokenflow/relaykit/dto"
+	"github.com/qwetls/tokenflow/setting/operation_setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

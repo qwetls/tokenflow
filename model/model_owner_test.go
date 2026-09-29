@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/constant"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/constant"
 	"github.com/stretchr/testify/require"
 )
 

@@ -3,11 +3,11 @@ package middleware
 import (
 	"fmt"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/dto"
-	"github.com/QuantumNous/new-api/logger"
-	pluginruntime "github.com/QuantumNous/new-api/pkg/jsplugin"
-	"github.com/QuantumNous/new-api/relaykit/types"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/dto"
+	"github.com/qwetls/tokenflow/logger"
+	pluginruntime "github.com/qwetls/tokenflow/pkg/jsplugin"
+	"github.com/qwetls/tokenflow/relaykit/types"
 	"github.com/gin-gonic/gin"
 )
 

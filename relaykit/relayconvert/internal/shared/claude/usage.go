@@ -1,6 +1,6 @@
 package claude
 
-import "github.com/QuantumNous/new-api/relaykit/dto"
+import "github.com/qwetls/tokenflow/relaykit/dto"
 
 func UsageFromOpenAI(usage *dto.Usage) *dto.ClaudeUsage {
 	if usage == nil {

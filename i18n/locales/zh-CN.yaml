@@ -2,7 +2,7 @@
 # 中文（简体）翻译文件
 
 # Task plugin messages
-task_plugin.unknown_meta_field: '插件元数据包含未知字段“{{.Field}}”。如果插件来自官方市场，可能需要更高版本的 new-api。请尝试更新 new-api 后重新安装插件。'
+task_plugin.unknown_meta_field: '插件元数据包含未知字段“{{.Field}}”。如果插件来自官方市场，可能需要更高版本的 TokenFlow。请尝试更新 TokenFlow 后重新安装插件。'
 
 # Common messages
 common.invalid_params: "无效的参数"

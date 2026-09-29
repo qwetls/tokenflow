@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/pkg/billingexpr"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/pkg/billingexpr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

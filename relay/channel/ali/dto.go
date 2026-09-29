@@ -1,7 +1,7 @@
 package ali
 
 import (
-	"github.com/QuantumNous/new-api/relaykit/dto"
+	"github.com/qwetls/tokenflow/relaykit/dto"
 )
 
 type AliMessage struct {

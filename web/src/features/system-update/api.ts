@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
+Copyright (C) 2026 TokenFlow contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +14,7 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
+For licensing information, see the LICENSE and NOTICE files.
 */
 import { selectLatestRelease, type SystemRelease } from './releases'
 
@@ -42,7 +42,7 @@ export async function fetchLatestSystemRelease(
 
   try {
     const response = await fetch(
-      'https://api.github.com/repos/QuantumNous/new-api/releases?per_page=100',
+      'https://api.github.com/repos/qwetls/tokenflow/releases?per_page=100',
       {
         credentials: 'omit',
         headers: { Accept: 'application/vnd.github+json' },

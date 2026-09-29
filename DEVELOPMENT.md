@@ -103,3 +103,23 @@ Tujuan: tombol "Login with Google" di form channel type 64. Riset sudah lengkap:
   meninjau ulang kewajiban AGPL (tawarkan source ke pengguna layanan).
 - Peringatan ToS: menjual akses langganan IDE (Antigravity/Claude Code) sebagai
   API melanggar ToS provider hulu — risiko ban akun ditanggung sendiri.
+7. **De-upstream total → TokenFlow sebagai proyek open source baru** (2026-09-29) —
+   versi `v1.0.0` (file `VERSION` + default `common.Version`, dikirim via
+   `VITE_REACT_APP_VERSION` saat build frontend), modul Go di-rename
+   `github.com/QuantumNous/new-api` → `github.com/qwetls/tokenflow`
+   (termasuk submodule `relaykit`), SQLite `tokenflow.db`, cache dir
+   `tokenflow-body-cache`, header copyright 1342 file web/plugins/electron →
+   "TokenFlow contributors" (template `web/scripts/add-copyright.mjs` ikut
+   diubah), link/link UI diarahkan ke `github.com/qwetls/tokenflow` (footer
+   docs → repo README, About, halaman System Update → releases repo ini,
+   feedback error page → issues, plugin marketplace →
+   `qwetls/tokenflow-plugins` — repo ini **belum dibuat**, buat dengan format
+   `index.json` yang sama bila mau fitur task plugin), README ditulis ulang,
+   README bahasa upstream dihapus, workflow rilis/push image upstream
+   dihapus (sisa: `ci.yml`), `docker-compose.yml` build lokal
+   `qwetls/tokenflow:latest`, `tokenflow.service` (eks `new-api.service`),
+   electron `productName` TokenFlow. **Dipertahankan sengaja:** satu baris
+   atribusi "Based on new-api (AGPL-3.0)" di halaman About + blok upstream di
+   `NOTICE` — syarat AGPLv3 §7(b) NOTICE upstream (atribusi + link proyek
+   asal di lokasi prominent). Jangan dihapus tanpa sadar risikonya.
+   Channel type "New API" (type 8) tetap ada — itu nama protokol, bukan branding.

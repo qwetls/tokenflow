@@ -1,8 +1,8 @@
 package setting
 
 import (
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/constant"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/constant"
 )
 
 var (

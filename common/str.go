@@ -9,7 +9,7 @@ import (
 	"strings"
 	"unsafe"
 
-	kitutil "github.com/QuantumNous/new-api/relaykit/relayconvert/kitutil"
+	kitutil "github.com/qwetls/tokenflow/relaykit/relayconvert/kitutil"
 
 	"github.com/samber/lo"
 )

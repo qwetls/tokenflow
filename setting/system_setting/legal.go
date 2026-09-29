@@ -1,6 +1,6 @@
 package system_setting
 
-import "github.com/QuantumNous/new-api/setting/config"
+import "github.com/qwetls/tokenflow/setting/config"
 
 type LegalSettings struct {
 	UserAgreement string `json:"user_agreement"`

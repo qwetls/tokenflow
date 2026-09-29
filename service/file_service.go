@@ -13,10 +13,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/constant"
-	"github.com/QuantumNous/new-api/logger"
-	"github.com/QuantumNous/new-api/relaykit/types"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/constant"
+	"github.com/qwetls/tokenflow/logger"
+	"github.com/qwetls/tokenflow/relaykit/types"
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/image/webp"

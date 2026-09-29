@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/model"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/model"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

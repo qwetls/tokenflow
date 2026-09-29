@@ -48,7 +48,7 @@ const GENERATED_FILE_MARKERS = [
 ]
 
 const COPYRIGHT_HEADER = `/*
-Copyright (C) 2023-2026 QuantumNous
+Copyright (C) 2026 TokenFlow contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -63,12 +63,12 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
+For licensing information, see the LICENSE and NOTICE files.
 */
 `
 
 const PROJECT_COPYRIGHT_BLOCK_PATTERN =
-  /^\/\*\r?\nCopyright \(C\) .+? QuantumNous\r?\n[\s\S]*?For commercial licensing, please contact support@quantumnous\.com\r?\n\*\/\r?\n?/
+  /^\/\*\r?\nCopyright \(C\) [\s\S]*?\r?\n\*\/\r?\n?/
 const THIRD_PARTY_COPYRIGHT_PATTERN =
   /^\/\*[\s\S]*?Copyright[\s\S]*?\*\/\r?\n?/i
 

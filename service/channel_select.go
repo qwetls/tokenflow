@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/constant"
-	"github.com/QuantumNous/new-api/dto"
-	"github.com/QuantumNous/new-api/i18n"
-	"github.com/QuantumNous/new-api/logger"
-	"github.com/QuantumNous/new-api/model"
-	"github.com/QuantumNous/new-api/pkg/jsplugin"
-	"github.com/QuantumNous/new-api/relaykit/types"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/constant"
+	"github.com/qwetls/tokenflow/dto"
+	"github.com/qwetls/tokenflow/i18n"
+	"github.com/qwetls/tokenflow/logger"
+	"github.com/qwetls/tokenflow/model"
+	"github.com/qwetls/tokenflow/pkg/jsplugin"
+	"github.com/qwetls/tokenflow/relaykit/types"
 	"github.com/gin-gonic/gin"
 )
 

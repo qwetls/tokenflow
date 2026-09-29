@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/QuantumNous/new-api/common"
+	"github.com/qwetls/tokenflow/common"
 
 	"gorm.io/gorm"
 )

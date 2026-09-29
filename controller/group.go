@@ -3,10 +3,10 @@ package controller
 import (
 	"net/http"
 
-	"github.com/QuantumNous/new-api/model"
-	"github.com/QuantumNous/new-api/service"
-	"github.com/QuantumNous/new-api/setting"
-	"github.com/QuantumNous/new-api/setting/ratio_setting"
+	"github.com/qwetls/tokenflow/model"
+	"github.com/qwetls/tokenflow/service"
+	"github.com/qwetls/tokenflow/setting"
+	"github.com/qwetls/tokenflow/setting/ratio_setting"
 
 	"github.com/gin-gonic/gin"
 )

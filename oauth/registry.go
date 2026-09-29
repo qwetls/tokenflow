@@ -5,8 +5,8 @@ import (
 	"maps"
 	"sync"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/model"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/model"
 )
 
 var (

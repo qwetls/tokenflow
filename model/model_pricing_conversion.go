@@ -7,13 +7,13 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/constant"
-	"github.com/QuantumNous/new-api/pkg/jsplugin"
-	"github.com/QuantumNous/new-api/setting/billing_setting"
-	"github.com/QuantumNous/new-api/setting/operation_setting"
-	"github.com/QuantumNous/new-api/setting/ratio_setting"
-	hostreasoning "github.com/QuantumNous/new-api/setting/reasoning"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/constant"
+	"github.com/qwetls/tokenflow/pkg/jsplugin"
+	"github.com/qwetls/tokenflow/setting/billing_setting"
+	"github.com/qwetls/tokenflow/setting/operation_setting"
+	"github.com/qwetls/tokenflow/setting/ratio_setting"
+	hostreasoning "github.com/qwetls/tokenflow/setting/reasoning"
 	"github.com/shopspring/decimal"
 )
 

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/QuantumNous/new-api/common"
+	"github.com/qwetls/tokenflow/common"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -8,12 +8,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/middleware"
-	"github.com/QuantumNous/new-api/model"
-	"github.com/QuantumNous/new-api/service"
-	passkeysvc "github.com/QuantumNous/new-api/service/passkey"
-	"github.com/QuantumNous/new-api/setting/system_setting"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/middleware"
+	"github.com/qwetls/tokenflow/model"
+	"github.com/qwetls/tokenflow/service"
+	passkeysvc "github.com/qwetls/tokenflow/service/passkey"
+	"github.com/qwetls/tokenflow/setting/system_setting"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-webauthn/webauthn/protocol"

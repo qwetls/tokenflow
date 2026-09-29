@@ -11,12 +11,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/pkg/billingexpr"
-	"github.com/QuantumNous/new-api/pkg/jsplugin"
-	"github.com/QuantumNous/new-api/setting/billing_setting"
-	"github.com/QuantumNous/new-api/setting/operation_setting"
-	"github.com/QuantumNous/new-api/setting/ratio_setting"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/pkg/billingexpr"
+	"github.com/qwetls/tokenflow/pkg/jsplugin"
+	"github.com/qwetls/tokenflow/setting/billing_setting"
+	"github.com/qwetls/tokenflow/setting/operation_setting"
+	"github.com/qwetls/tokenflow/setting/ratio_setting"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 )

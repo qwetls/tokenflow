@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
+Copyright (C) 2026 TokenFlow contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +14,7 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
+For licensing information, see the LICENSE and NOTICE files.
 */
 import { Lexer, type MarkedToken, type Token } from 'marked'
 import { parseDocument } from 'yaml'
@@ -22,8 +22,6 @@ import { z } from 'zod'
 
 import type { MarketplacePlugin } from '../types'
 import {
-  DEFAULT_MARKETPLACE_INDEX_URL,
-  GITHUB_MARKETPLACE_INDEX_URL,
   findMarketplaceVersion,
   resolvePluginSourceUrl,
 } from './marketplace'
@@ -83,23 +81,6 @@ export function resolvePluginChangelogUrl(
   const url = new URL(source)
   if (url.username || url.password || !url.pathname.endsWith('/plugin.js')) {
     return null
-  }
-  // The official website rewrites plugin paths into download API URLs. Its
-  // release sidecars still live beside the same key/version in the official repo.
-  if (indexUrl.trim() === DEFAULT_MARKETPLACE_INDEX_URL) {
-    if (
-      ![plugin.key, version].every(
-        (id) => /^[A-Za-z0-9._-]+$/.test(id) && id !== '.' && id !== '..'
-      )
-    ) {
-      return null
-    }
-    const expected = new URL(`${plugin.key}/${version}/plugin.js`, indexUrl)
-    if (url.pathname !== expected.pathname) return null
-    return new URL(
-      `plugins/tasks/${plugin.key}/${version}/CHANGELOG.md`,
-      GITHUB_MARKETPLACE_INDEX_URL
-    ).href
   }
   return new URL('CHANGELOG.md', url).href
 }

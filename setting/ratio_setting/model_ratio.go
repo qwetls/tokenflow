@@ -4,10 +4,10 @@ import (
 	"maps"
 	"strings"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/setting/operation_setting"
-	hostreasoning "github.com/QuantumNous/new-api/setting/reasoning"
-	"github.com/QuantumNous/new-api/types"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/setting/operation_setting"
+	hostreasoning "github.com/qwetls/tokenflow/setting/reasoning"
+	"github.com/qwetls/tokenflow/types"
 )
 
 // from songquanpeng/one-api

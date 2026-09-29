@@ -1,4 +1,4 @@
-module github.com/QuantumNous/new-api
+module github.com/qwetls/tokenflow
 
 // +heroku goVersion go1.18
 go 1.25.1
@@ -173,7 +173,7 @@ require (
 
 require (
 	github.com/ClickHouse/clickhouse-go/v2 v2.46.0
-	github.com/QuantumNous/new-api/relaykit v0.0.0
+	github.com/qwetls/tokenflow/relaykit v0.0.0
 )
 
-replace github.com/QuantumNous/new-api/relaykit => ./relaykit
+replace github.com/qwetls/tokenflow/relaykit => ./relaykit

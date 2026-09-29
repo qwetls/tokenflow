@@ -5,9 +5,9 @@ import (
 	"errors"
 	"io"
 
-	"github.com/QuantumNous/new-api/model"
-	"github.com/QuantumNous/new-api/setting/system_setting"
-	"github.com/QuantumNous/new-api/types"
+	"github.com/qwetls/tokenflow/model"
+	"github.com/qwetls/tokenflow/setting/system_setting"
+	"github.com/qwetls/tokenflow/types"
 	"github.com/gin-gonic/gin"
 )
 

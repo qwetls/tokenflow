@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
+Copyright (C) 2026 TokenFlow contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +14,7 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
+For licensing information, see the LICENSE and NOTICE files.
 */
 import assert from 'node:assert/strict'
 
@@ -37,7 +37,7 @@ import type {
   TaskPluginListItem,
 } from '../types'
 
-const OFFICIAL_INDEX_URL = 'https://www.newapi.ai/api/v1/plugins/index.json'
+const OFFICIAL_INDEX_URL = 'https://raw.githubusercontent.com/qwetls/tokenflow-plugins/main/index.json'
 
 function marketplacePlugin(
   overrides: Partial<MarketplacePlugin> = {}
@@ -107,7 +107,7 @@ describe('marketplace source path resolution', () => {
   test('resolves against a root index without dropping the path', () => {
     assert.equal(
       resolvePluginSourceUrl(OFFICIAL_INDEX_URL, 'x/1.0.0/plugin.js'),
-      'https://www.newapi.ai/api/v1/plugins/x/1.0.0/plugin.js'
+      'https://raw.githubusercontent.com/qwetls/tokenflow-plugins/main/x/1.0.0/plugin.js'
     )
   })
 

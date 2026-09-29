@@ -4,12 +4,12 @@ import (
 	"io"
 	"net/http"
 
-	taskdto "github.com/QuantumNous/new-api/dto"
-	"github.com/QuantumNous/new-api/model"
-	relaycommon "github.com/QuantumNous/new-api/relay/common"
-	"github.com/QuantumNous/new-api/relaykit/dto"
-	"github.com/QuantumNous/new-api/relaykit/types"
-	hosttypes "github.com/QuantumNous/new-api/types"
+	taskdto "github.com/qwetls/tokenflow/dto"
+	"github.com/qwetls/tokenflow/model"
+	relaycommon "github.com/qwetls/tokenflow/relay/common"
+	"github.com/qwetls/tokenflow/relaykit/dto"
+	"github.com/qwetls/tokenflow/relaykit/types"
+	hosttypes "github.com/qwetls/tokenflow/types"
 
 	"github.com/gin-gonic/gin"
 )

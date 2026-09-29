@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/model"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/model"
 )
 
 func TestBuildTaskPluginViewRewritesOnlyStructuredTaskIDFields(t *testing.T) {

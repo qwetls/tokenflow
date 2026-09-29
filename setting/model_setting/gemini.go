@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/setting/config"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/setting/config"
 )
 
 const defaultGeminiSafetySetting = "OFF"

@@ -10,14 +10,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/constant"
-	"github.com/QuantumNous/new-api/dto"
-	"github.com/QuantumNous/new-api/logger"
-	"github.com/QuantumNous/new-api/model"
-	relaycommon "github.com/QuantumNous/new-api/relay/common"
-	relayconstant "github.com/QuantumNous/new-api/relay/constant"
-	"github.com/QuantumNous/new-api/setting"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/constant"
+	"github.com/qwetls/tokenflow/dto"
+	"github.com/qwetls/tokenflow/logger"
+	"github.com/qwetls/tokenflow/model"
+	relaycommon "github.com/qwetls/tokenflow/relay/common"
+	relayconstant "github.com/qwetls/tokenflow/relay/constant"
+	"github.com/qwetls/tokenflow/setting"
 
 	"github.com/gin-gonic/gin"
 )

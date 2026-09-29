@@ -13,11 +13,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/i18n"
-	"github.com/QuantumNous/new-api/middleware"
-	"github.com/QuantumNous/new-api/model"
-	"github.com/QuantumNous/new-api/service/authz"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/i18n"
+	"github.com/qwetls/tokenflow/middleware"
+	"github.com/qwetls/tokenflow/model"
+	"github.com/qwetls/tokenflow/service/authz"
 	"github.com/alicebob/miniredis/v2"
 	"github.com/go-redis/redis/v8"
 

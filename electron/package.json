@@ -1,5 +1,5 @@
 {
-  "name": "new-api-electron",
+  "name": "tokenflow-electron",
   "version": "1.0.0",
   "description": "New API - AI Model Gateway Desktop Application",
   "main": "main.js",
@@ -30,7 +30,7 @@
   },
   "build": {
     "appId": "com.newapi.desktop",
-    "productName": "New-API-App",
+    "productName": "TokenFlow",
     "publish": null,
     "directories": {
       "output": "dist"

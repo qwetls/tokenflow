@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/dto"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/dto"
 )
 
 const (

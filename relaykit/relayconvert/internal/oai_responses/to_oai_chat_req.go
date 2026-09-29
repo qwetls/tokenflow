@@ -8,10 +8,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/QuantumNous/new-api/relaykit/dto"
-	"github.com/QuantumNous/new-api/relaykit/relayconvert/internal/convdiag"
-	kitutil "github.com/QuantumNous/new-api/relaykit/relayconvert/kitutil"
-	"github.com/QuantumNous/new-api/relaykit/relayconvert/reasoning"
+	"github.com/qwetls/tokenflow/relaykit/dto"
+	"github.com/qwetls/tokenflow/relaykit/relayconvert/internal/convdiag"
+	kitutil "github.com/qwetls/tokenflow/relaykit/relayconvert/kitutil"
+	"github.com/qwetls/tokenflow/relaykit/relayconvert/reasoning"
 )
 
 const (

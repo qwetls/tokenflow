@@ -3,11 +3,11 @@ package router
 import (
 	"strings"
 
-	"github.com/QuantumNous/new-api/constant"
-	"github.com/QuantumNous/new-api/controller"
-	"github.com/QuantumNous/new-api/middleware"
-	"github.com/QuantumNous/new-api/relay"
-	"github.com/QuantumNous/new-api/relaykit/types"
+	"github.com/qwetls/tokenflow/constant"
+	"github.com/qwetls/tokenflow/controller"
+	"github.com/qwetls/tokenflow/middleware"
+	"github.com/qwetls/tokenflow/relay"
+	"github.com/qwetls/tokenflow/relaykit/types"
 
 	"github.com/gin-gonic/gin"
 )

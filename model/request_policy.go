@@ -11,10 +11,10 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/setting"
-	"github.com/QuantumNous/new-api/setting/config"
-	"github.com/QuantumNous/new-api/setting/operation_setting"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/setting"
+	"github.com/qwetls/tokenflow/setting/config"
+	"github.com/qwetls/tokenflow/setting/operation_setting"
 	"gorm.io/gorm"
 )
 

@@ -5,7 +5,7 @@ import (
 	"maps"
 	"sync"
 
-	"github.com/QuantumNous/new-api/common"
+	"github.com/qwetls/tokenflow/common"
 )
 
 var userUsableGroups = map[string]string{

@@ -8,7 +8,7 @@ package model
 import (
 	"strings"
 
-	"github.com/QuantumNous/new-api/relaykit/dto"
+	"github.com/qwetls/tokenflow/relaykit/dto"
 )
 
 func legacyDallePricingRules(name string) []LegacyPricingRule {

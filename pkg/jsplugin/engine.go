@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/QuantumNous/new-api/logger"
+	"github.com/qwetls/tokenflow/logger"
 	"github.com/grafana/sobek"
 	"github.com/grafana/sobek/parser"
 )

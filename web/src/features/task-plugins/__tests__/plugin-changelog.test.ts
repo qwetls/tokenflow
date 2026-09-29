@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
+Copyright (C) 2026 TokenFlow contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,14 +14,11 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
+For licensing information, see the LICENSE and NOTICE files.
 */
 import { afterEach, describe, expect, test, vi } from 'vitest'
 
-import {
-  DEFAULT_MARKETPLACE_INDEX_URL,
-  GITHUB_MARKETPLACE_INDEX_URL,
-} from '../lib/marketplace'
+import { GITHUB_MARKETPLACE_INDEX_URL } from '../lib/marketplace'
 import {
   changelogLocale,
   fetchPluginChangelog,
@@ -93,32 +90,9 @@ describe('changelog path and language resolution', () => {
     expect(
       resolvePluginChangelogUrl(GITHUB_MARKETPLACE_INDEX_URL, plugin, '1.2.0')
     ).toBe(
-      'https://raw.githubusercontent.com/QuantumNous/new-api-plugins/main/plugins/tasks/demo/1.2.0/CHANGELOG.md'
+      'https://raw.githubusercontent.com/qwetls/tokenflow-plugins/refs/heads/main/plugins/tasks/demo/1.2.0/CHANGELOG.md'
     )
     expect(resolvePluginChangelogUrl(indexUrl, plugin, '9.0.0')).toBeNull()
-  })
-
-  test('the official proxy index resolves only its registered key/version to the official repository', () => {
-    const proxyPlugin = {
-      ...plugin,
-      versions: [{ version: '1.2.0', path: 'demo/1.2.0/plugin.js' }],
-    }
-    expect(
-      resolvePluginChangelogUrl(
-        DEFAULT_MARKETPLACE_INDEX_URL,
-        proxyPlugin,
-        '1.2.0'
-      )
-    ).toBe(
-      'https://raw.githubusercontent.com/QuantumNous/new-api-plugins/main/plugins/tasks/demo/1.2.0/CHANGELOG.md'
-    )
-    expect(
-      resolvePluginChangelogUrl(
-        DEFAULT_MARKETPLACE_INDEX_URL,
-        { ...proxyPlugin, key: 'other' },
-        '1.2.0'
-      )
-    ).toBeNull()
   })
 
   test.each([

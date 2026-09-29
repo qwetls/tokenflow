@@ -8,11 +8,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/common/limiter"
-	"github.com/QuantumNous/new-api/constant"
-	relaycommon "github.com/QuantumNous/new-api/relay/common"
-	"github.com/QuantumNous/new-api/setting"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/common/limiter"
+	"github.com/qwetls/tokenflow/constant"
+	relaycommon "github.com/qwetls/tokenflow/relay/common"
+	"github.com/qwetls/tokenflow/setting"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis/v8"

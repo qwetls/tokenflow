@@ -1,12 +1,12 @@
 package controller
 
 import (
-	"github.com/QuantumNous/new-api/dto"
-	"github.com/QuantumNous/new-api/logger"
-	"github.com/QuantumNous/new-api/model"
-	pluginruntime "github.com/QuantumNous/new-api/pkg/jsplugin"
-	"github.com/QuantumNous/new-api/relay"
-	relaycommon "github.com/QuantumNous/new-api/relay/common"
+	"github.com/qwetls/tokenflow/dto"
+	"github.com/qwetls/tokenflow/logger"
+	"github.com/qwetls/tokenflow/model"
+	pluginruntime "github.com/qwetls/tokenflow/pkg/jsplugin"
+	"github.com/qwetls/tokenflow/relay"
+	relaycommon "github.com/qwetls/tokenflow/relay/common"
 	"github.com/gin-gonic/gin"
 )
 

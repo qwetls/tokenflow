@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
+Copyright (C) 2026 TokenFlow contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +14,7 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
+For licensing information, see the LICENSE and NOTICE files.
 */
 import assert from 'node:assert/strict'
 
@@ -32,9 +32,9 @@ describe('plugin source URL normalization', () => {
   test('rewrites a GitHub blob URL to its raw host', () => {
     assert.equal(
       normalizePluginSourceUrl(
-        'https://github.com/QuantumNous/new-api-plugins/blob/main/plugins/tasks/doubao/1.0.0/plugin.js'
+        'https://github.com/qwetls/tokenflow-plugins/blob/main/plugins/tasks/doubao/1.0.0/plugin.js'
       ),
-      'https://raw.githubusercontent.com/QuantumNous/new-api-plugins/main/plugins/tasks/doubao/1.0.0/plugin.js'
+      'https://raw.githubusercontent.com/qwetls/tokenflow-plugins/main/plugins/tasks/doubao/1.0.0/plugin.js'
     )
   })
 

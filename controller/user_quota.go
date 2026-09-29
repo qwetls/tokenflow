@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/i18n"
-	"github.com/QuantumNous/new-api/model"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/i18n"
+	"github.com/qwetls/tokenflow/model"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )

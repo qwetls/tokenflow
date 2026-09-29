@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/model"
-	"github.com/QuantumNous/new-api/relaykit/types"
-	"github.com/QuantumNous/new-api/setting/operation_setting"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/model"
+	"github.com/qwetls/tokenflow/relaykit/types"
+	"github.com/qwetls/tokenflow/setting/operation_setting"
 	"github.com/gin-gonic/gin"
 )
 

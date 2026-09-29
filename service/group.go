@@ -3,11 +3,11 @@ package service
 import (
 	"strings"
 
-	"github.com/QuantumNous/new-api/common"
-	"github.com/QuantumNous/new-api/constant"
-	"github.com/QuantumNous/new-api/model"
-	"github.com/QuantumNous/new-api/setting"
-	"github.com/QuantumNous/new-api/setting/ratio_setting"
+	"github.com/qwetls/tokenflow/common"
+	"github.com/qwetls/tokenflow/constant"
+	"github.com/qwetls/tokenflow/model"
+	"github.com/qwetls/tokenflow/setting"
+	"github.com/qwetls/tokenflow/setting/ratio_setting"
 	"github.com/gin-gonic/gin"
 )
 
