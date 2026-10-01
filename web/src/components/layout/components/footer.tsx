@@ -161,7 +161,7 @@ export function Footer(props: FooterProps) {
           },
           {
             text: t('footer.columns.docs.links.apiDocs'),
-            href: 'https://github.com/qwetls/tokenflow#readme',
+            href: '/docs',
           },
         ],
       },
