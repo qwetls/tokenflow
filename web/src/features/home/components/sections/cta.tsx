@@ -46,7 +46,7 @@ export function CTA(props: CTAProps) {
             />
             <div className='relative'>
               <h2 className='mx-auto max-w-xl text-3xl font-bold tracking-tight text-balance md:text-5xl'>
-                {t('Start routing.')} {t('Today.')}
+                {t('Your first call is')} {t('five minutes away.')}
               </h2>
               <p className='text-muted-foreground mx-auto mt-5 max-w-md text-base leading-relaxed'>
                 {t(

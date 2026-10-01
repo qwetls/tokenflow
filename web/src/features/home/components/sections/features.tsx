@@ -124,9 +124,9 @@ export function Features(_props: FeaturesProps) {
       <div className='mx-auto max-w-6xl px-6 py-24 md:py-32'>
         <AnimateInView className='mx-auto mb-14 max-w-2xl text-center'>
           <h2 className='text-3xl font-bold tracking-tight text-balance md:text-4xl'>
-            {t('Built for developers,')}{' '}
+            {t('The boring parts,')}{' '}
             <span className='text-muted-foreground'>
-              {t('designed for scale')}
+              {t('handled.')}
             </span>
           </h2>
         </AnimateInView>
