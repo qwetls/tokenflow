@@ -57,8 +57,9 @@ import { cn } from '@/lib/utils'
 
 export function SignUpForm({
   className,
+  showPasswordForm = true,
   ...props
-}: React.HTMLAttributes<HTMLFormElement>) {
+}: React.HTMLAttributes<HTMLFormElement> & { showPasswordForm?: boolean }) {
   const { t } = useTranslation()
   const [isLoading, setIsLoading] = useState(false)
   const [verificationCode, setVerificationCode] = useState('')
@@ -251,6 +252,8 @@ export function SignUpForm({
         className={cn('grid gap-4', className)}
         {...props}
       >
+        {showPasswordForm && (
+          <>
         {/* Username Field */}
         <FormField
           control={form.control}
@@ -381,6 +384,8 @@ export function SignUpForm({
           {isLoading ? <Loader2 className='h-4 w-4 animate-spin' /> : null}
           {t('Create account')}
         </Button>
+          </>
+        )}
 
         {oauthRegisterEnabled && (
           <OAuthProviders

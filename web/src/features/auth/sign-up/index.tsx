@@ -32,6 +32,9 @@ export function SignUp() {
   // Mirror the backend: when registration is disabled, don't render the
   // sign-up form at all — the API rejects every registration attempt anyway.
   const registrationEnabled = status?.register_enabled ?? true
+  // When only password registration is disabled, show the OAuth providers
+  // without the username/password form.
+  const passwordRegisterEnabled = status?.password_register_enabled ?? true
 
   if (!registrationEnabled) {
     return (
@@ -86,7 +89,7 @@ export function SignUp() {
           </p>
         </div>
 
-        <SignUpForm />
+        <SignUpForm showPasswordForm={passwordRegisterEnabled} />
 
         <TermsFooter
           variant='sign-up'
