@@ -20,6 +20,7 @@ import { Link } from '@tanstack/react-router'
 import { Fragment, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { IconWhatsapp, IconX } from '@/assets/brand-icons'
 import { useStatus } from '@/hooks/use-status'
 import { useSystemConfig } from '@/hooks/use-system-config'
 import { cn } from '@/lib/utils'
@@ -232,6 +233,26 @@ export function Footer(props: FooterProps) {
             <p className='text-muted-foreground/60 mt-3 max-w-[200px] text-xs leading-relaxed'>
               {t('One key. Every model. Pay as you go.')}
             </p>
+            <div className='mt-4 flex items-center gap-2'>
+              <a
+                href='https://x.com/xeylabs'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='X (Twitter)'
+                className='text-muted-foreground/60 hover:text-foreground hover:bg-muted flex size-8 items-center justify-center rounded-lg transition-colors'
+              >
+                <IconX className='size-4' />
+              </a>
+              <a
+                href='https://whatsapp.com/channel/0029VbB7KDOLCoWuR6E3b40u'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='WhatsApp Channel'
+                className='text-muted-foreground/60 hover:text-foreground hover:bg-muted flex size-8 items-center justify-center rounded-lg transition-colors'
+              >
+                <IconWhatsapp className='size-4' />
+              </a>
+            </div>
           </div>
 
           {/* Links columns */}
