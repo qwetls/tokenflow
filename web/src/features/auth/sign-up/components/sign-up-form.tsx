@@ -252,6 +252,14 @@ export function SignUpForm({
         className={cn('grid gap-4', className)}
         {...props}
       >
+        {/* Legal consent applies to both password and OAuth registration */}
+        <LegalConsent
+          status={status}
+          checked={agreedToLegal}
+          onCheckedChange={setAgreedToLegal}
+          className='mt-1'
+        />
+
         {showPasswordForm && (
           <>
         {/* Username Field */}
@@ -363,13 +371,6 @@ export function SignUpForm({
             />
           </div>
         )}
-
-        <LegalConsent
-          status={status}
-          checked={agreedToLegal}
-          onCheckedChange={setAgreedToLegal}
-          className='mt-1'
-        />
 
         {/* Submit Button */}
         <Button
