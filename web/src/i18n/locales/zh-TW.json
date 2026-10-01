@@ -6819,6 +6819,10 @@
     "Zhipu": "智譜",
     "Zhipu GLM": "智譜GLM",
     "Zhipu V4": "智譜 V4",
-    "Zoom": "縮放"
+    "Zoom": "縮放",
+    "Show code": "Show code",
+    "HTML preview": "HTML preview",
+    "Fullscreen": "Fullscreen",
+    "Exit fullscreen": "Exit fullscreen"
   }
 }

@@ -33,6 +33,7 @@ const localeLoaders: Record<string, () => Promise<{ default: Record<string, unkn
   ja: () => import('./locales/ja.json'),
   vi: () => import('./locales/vi.json'),
   zhTW: () => import('./locales/zh-TW.json'),
+  id: () => import('./locales/id.json'),
 }
 
 type ReadCallback = (error: Error | null, data?: Record<string, unknown>) => void
@@ -42,7 +43,7 @@ const lazyLocaleBackend = {
   init() {
     /* no-op */
   },
-  read(language: string, _namespace: string, callback: ReadCallback) {
+  read(language: string, namespace: string, callback: ReadCallback) {
     const loader = localeLoaders[language]
     if (!loader) {
       callback(new Error(`Unsupported locale: ${language}`))
@@ -51,8 +52,21 @@ const lazyLocaleBackend = {
     // i18next backend API is callback-based by design; bridge the dynamic
     // import promise into it.
     void loader().then(
-      // eslint-disable-next-line promise/no-callback-in-promise
-      (mod) => callback(null, mod.default),
+      (mod) => {
+        // Locale files are shaped `{ translation: {...} }`, but the backend
+        // must hand i18next the namespace's table itself — passing the whole
+        // file double-wraps it (`translation.translation.…`), so every lookup
+        // misses and t() echoes raw keys in every language.
+        const file = mod.default as Record<string, unknown>
+        const table =
+          namespace === 'translation' &&
+          file.translation &&
+          typeof file.translation === 'object'
+            ? (file.translation as Record<string, unknown>)
+            : file
+        // eslint-disable-next-line promise/no-callback-in-promise
+        callback(null, table)
+      },
       // eslint-disable-next-line promise/no-callback-in-promise
       (err: unknown) => callback(err instanceof Error ? err : new Error(String(err))),
     )
@@ -65,7 +79,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
-    supportedLngs: ['en', 'zhCN', 'fr', 'ru', 'ja', 'vi', 'zhTW'],
+    supportedLngs: ['en', 'zhCN', 'fr', 'ru', 'ja', 'vi', 'zhTW', 'id'],
     load: 'currentOnly',
     nsSeparator: false, // Allow literal colons in keys (e.g., URLs, labels)
     debug: import.meta.env.DEV,

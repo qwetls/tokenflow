@@ -24,6 +24,7 @@ export const INTERFACE_LANGUAGE_OPTIONS = [
   { code: 'ja', label: '日本語' },
   { code: 'vi', label: 'Tiếng Việt' },
   { code: 'zhTW', label: '繁體中文' },
+  { code: 'id', label: 'Bahasa Indonesia' },
 ] as const
 
 export type InterfaceLanguageCode =
