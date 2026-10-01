@@ -21,29 +21,49 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
 import { convertDetectedLanguage } from './languages'
-import en from './locales/en.json'
-import fr from './locales/fr.json'
-import ja from './locales/ja.json'
-import ru from './locales/ru.json'
-import vi from './locales/vi.json'
-import zhTW from './locales/zh-TW.json'
-import zhCN from './locales/zh.json'
 
-export const resources = {
-  en,
-  zhCN,
-  fr,
-  ru,
-  ja,
-  vi,
-  zhTW,
-} as const
+// Locale dictionaries are lazy-loaded: each language ships as its own async
+// chunk instead of bloating the entry bundle (7 locales were ~3.9MB raw,
+// most of the entry chunk).
+const localeLoaders: Record<string, () => Promise<{ default: Record<string, unknown> }>> = {
+  en: () => import('./locales/en.json'),
+  zhCN: () => import('./locales/zh.json'),
+  fr: () => import('./locales/fr.json'),
+  ru: () => import('./locales/ru.json'),
+  ja: () => import('./locales/ja.json'),
+  vi: () => import('./locales/vi.json'),
+  zhTW: () => import('./locales/zh-TW.json'),
+}
+
+type ReadCallback = (error: Error | null, data?: Record<string, unknown>) => void
+
+const lazyLocaleBackend = {
+  type: 'backend' as const,
+  init() {
+    /* no-op */
+  },
+  read(language: string, _namespace: string, callback: ReadCallback) {
+    const loader = localeLoaders[language]
+    if (!loader) {
+      callback(new Error(`Unsupported locale: ${language}`))
+      return
+    }
+    // i18next backend API is callback-based by design; bridge the dynamic
+    // import promise into it.
+    void loader().then(
+      // eslint-disable-next-line promise/no-callback-in-promise
+      (mod) => callback(null, mod.default),
+      // eslint-disable-next-line promise/no-callback-in-promise
+      (err: unknown) => callback(err instanceof Error ? err : new Error(String(err))),
+    )
+  },
+}
 
 i18n
+  .use(lazyLocaleBackend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources,
     fallbackLng: 'en',
     supportedLngs: ['en', 'zhCN', 'fr', 'ru', 'ja', 'vi', 'zhTW'],
     load: 'currentOnly',
