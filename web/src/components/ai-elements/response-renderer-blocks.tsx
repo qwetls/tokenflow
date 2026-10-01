@@ -35,6 +35,7 @@ import { cn } from '@/lib/utils'
 
 import { getNodeKey } from './response-content'
 import type { BlockRendererOptions } from './response-types'
+import { HtmlPreview } from './html-preview'
 
 const headingClasses = {
   1: 'mt-6 mb-3 text-xl font-semibold tracking-normal',
@@ -142,6 +143,13 @@ export function renderList(
 
 export function renderCodeBlock(node: CodeBlockNode, key: string): ReactNode {
   const language = node.language || 'plaintext'
+
+  // HTML blocks get an artifact-style live preview toggle. Every other
+  // language keeps the plain code block rendering below.
+  if (language.trim().toLowerCase() === 'html') {
+    return <HtmlPreview code={node.code} key={key} language={language} />
+  }
+
   const lineCount = node.code.split('\n').length
 
   return (
