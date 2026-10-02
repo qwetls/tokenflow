@@ -306,6 +306,17 @@ export function Footer(props: FooterProps) {
             >
               {t('Partners')}
             </Link>
+            <span aria-hidden='true' className='text-muted-foreground/30'>
+              ·
+            </span>
+            <a
+              href='https://t.me/xcloudhost'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='hover:text-foreground transition-colors duration-200'
+            >
+              {t('Contact')}
+            </a>
           </div>
         </div>
       </div>
