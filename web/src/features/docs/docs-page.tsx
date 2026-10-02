@@ -70,6 +70,21 @@ console.log(response.choices[0].message.content);`
 const modelsExample = `curl ${BASE_URL}/models \\
   -H "Authorization: Bearer YOUR_API_KEY"`
 
+const piModelsExample = `{
+  "providers": {
+    "tokenflow": {
+      "api": "openai-completions",
+      "baseUrl": "https://xcloudhost.me/v1",
+      "apiKey": "YOUR_API_KEY",
+      "models": [
+        { "id": "glm-5.3-flash", "name": "GLM 5.3 Flash" },
+        { "id": "deepseek-v4.1-flash", "name": "DeepSeek V4.1 Flash" },
+        { "id": "kimi-k2.6", "name": "Kimi K2.6" }
+      ]
+    }
+  }
+}`
+
 function CodeBlock({ code, language }: { code: string; language: string }) {
   const [copied, setCopied] = useState(false)
 
@@ -299,6 +314,68 @@ export function DocsPage() {
             <InlineCode>GET /v1/models</InlineCode>:
           </p>
           <CodeBlock code={modelsExample} language='bash' />
+        </Section>
+
+        <Section id='pi-agent' title='Using TokenFlow with Pi Agent'>
+          <p>
+            Pi is an open-source AI coding agent that runs in your terminal.
+            You can register TokenFlow as a custom OpenAI-compatible provider,
+            so Pi runs on your TokenFlow quota.
+          </p>
+          <ol className='list-decimal space-y-3 pl-6'>
+            <li>
+              <span className='font-medium text-foreground'>
+                Install Pi.
+              </span>
+              <CodeBlock
+                code='curl -fsSL https://pi.dev/install.sh | sh'
+                language='bash'
+              />
+            </li>
+            <li>
+              <span className='font-medium text-foreground'>
+                Create a TokenFlow API key.
+              </span>{' '}
+              Open the dashboard, go to API Keys, and create a new key.
+            </li>
+            <li>
+              <span className='font-medium text-foreground'>
+                Register TokenFlow as a provider.
+              </span>{' '}
+              Create or edit <InlineCode>~/.pi/agent/models.json</InlineCode>{' '}
+              and add the block below, replacing{' '}
+              <InlineCode>YOUR_API_KEY</InlineCode> with your key. You can also
+              use Pi&apos;s &ldquo;Add new provider&rdquo; screen with the same
+              base URL and key, choosing the chat completions API type.
+              <CodeBlock code={piModelsExample} language='json' />
+            </li>
+            <li>
+              <span className='font-medium text-foreground'>Start Pi.</span>{' '}
+              Run <InlineCode>pi --model tokenflow/glm-5.3-flash</InlineCode>,
+              or pick the model with <InlineCode>/model</InlineCode> inside Pi.
+            </li>
+          </ol>
+          <ul className='list-disc space-y-2 pl-6'>
+            <li>
+              The <InlineCode>/v1</InlineCode> suffix in{' '}
+              <InlineCode>baseUrl</InlineCode> is required.
+            </li>
+            <li>
+              <InlineCode>GET /v1/models</InlineCode> requires authentication —
+              if Pi shows &ldquo;0 models&rdquo; for the provider, the API key
+              is missing or not being sent. Save the key in the provider
+              settings, or declare the models explicitly in{' '}
+              <InlineCode>models.json</InlineCode> as shown above.
+            </li>
+            <li>
+              Model IDs change over time — check the dashboard or call{' '}
+              <InlineCode>GET /v1/models</InlineCode> for the current list.
+            </li>
+            <li>
+              Every request deducts from your TokenFlow quota, like any other
+              API call.
+            </li>
+          </ul>
         </Section>
 
         <Section id='quota-billing' title='Quota & billing'>
