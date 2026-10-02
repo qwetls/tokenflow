@@ -145,7 +145,7 @@ export function Footer(props: FooterProps) {
           },
           {
             text: t('footer.columns.about.links.contact'),
-            href: 'https://github.com/qwetls/tokenflow/issues',
+            href: 'https://t.me/xcloudhost',
           },
           {
             text: t('footer.columns.about.links.features'),

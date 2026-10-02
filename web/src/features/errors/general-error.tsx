@@ -22,7 +22,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-const FEEDBACK_URL = 'https://github.com/qwetls/tokenflow/issues'
+const FEEDBACK_URL = 'https://t.me/xcloudhost'
 
 type GeneralErrorProps = React.HTMLAttributes<HTMLDivElement> & {
   minimal?: boolean
@@ -68,7 +68,7 @@ export function GeneralError({
         </p>
         {!minimal && (
           <p className='text-muted-foreground text-center text-sm'>
-            {t('If this keeps happening, please report it on GitHub Issues.')}
+            {t('If this keeps happening, please contact us on Telegram.')}
           </p>
         )}
         {!minimal && (
@@ -86,7 +86,7 @@ export function GeneralError({
                 />
               }
             >
-              {t('Report an issue')}
+              {t('Contact us on Telegram')}
             </Button>
             <Button onClick={() => navigate({ to: '/' })}>
               {t('Back to Home')}
