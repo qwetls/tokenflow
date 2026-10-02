@@ -140,6 +140,10 @@ export function Footer(props: FooterProps) {
             href: '/about',
           },
           {
+            text: t('footer.columns.about.links.partners'),
+            href: '/partners',
+          },
+          {
             text: t('footer.columns.about.links.contact'),
             href: 'https://github.com/qwetls/tokenflow/issues',
           },

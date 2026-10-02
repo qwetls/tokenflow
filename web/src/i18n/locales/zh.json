@@ -2606,6 +2606,7 @@
     "Footer": "页脚",
     "Footer text displayed at the bottom of pages": "显示在页面底部的页脚文本",
     "footer.columns.about.links.aboutProject": "关于项目",
+    "footer.columns.about.links.partners": "Partners",
     "footer.columns.about.links.contact": "联系我们",
     "footer.columns.about.links.features": "功能",
     "footer.columns.about.title": "关于我们",
@@ -6823,6 +6824,10 @@
     "Show code": "Show code",
     "HTML preview": "HTML preview",
     "Fullscreen": "Fullscreen",
-    "Exit fullscreen": "Exit fullscreen"
+    "Exit fullscreen": "Exit fullscreen",
+    "No Partners Content Set": "No Partners Content Set",
+    "The administrator has not configured any partners content yet. You can set it in the settings page, supporting HTML or URL.": "The administrator has not configured any partners content yet. You can set it in the settings page, supporting HTML or URL.",
+    "Partners": "Partners",
+    "Enter HTML code (e.g., <p>Partner with us...</p>) or a URL (e.g., https://example.com) to embed as iframe": "Enter HTML code (e.g., <p>Partner with us...</p>) or a URL (e.g., https://example.com) to embed as iframe"
   }
 }

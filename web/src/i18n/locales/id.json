@@ -2606,6 +2606,7 @@
     "Footer": "Footer",
     "Footer text displayed at the bottom of pages": "Teks footer yang ditampilkan di bagian bawah halaman",
     "footer.columns.about.links.aboutProject": "Tentang Proyek",
+    "footer.columns.about.links.partners": "Partners",
     "footer.columns.about.links.contact": "Hubungi Kami",
     "footer.columns.about.links.features": "Fitur",
     "footer.columns.about.title": "Tentang Kami",
@@ -6823,6 +6824,10 @@
     "Show code": "Tampilkan kode",
     "HTML preview": "Pratinjau HTML",
     "Fullscreen": "Layar penuh",
-    "Exit fullscreen": "Keluar dari layar penuh"
+    "Exit fullscreen": "Keluar dari layar penuh",
+    "No Partners Content Set": "No Partners Content Set",
+    "The administrator has not configured any partners content yet. You can set it in the settings page, supporting HTML or URL.": "The administrator has not configured any partners content yet. You can set it in the settings page, supporting HTML or URL.",
+    "Partners": "Partners",
+    "Enter HTML code (e.g., <p>Partner with us...</p>) or a URL (e.g., https://example.com) to embed as iframe": "Enter HTML code (e.g., <p>Partner with us...</p>) or a URL (e.g., https://example.com) to embed as iframe"
   }
 }

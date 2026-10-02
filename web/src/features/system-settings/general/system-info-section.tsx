@@ -53,6 +53,7 @@ const _systemInfoSchema = z.object({
   Logo: z.string().url().optional().or(z.literal('')),
   Footer: z.string().optional(),
   About: z.string().optional(),
+  Partners: z.string().optional(),
   HomePageContent: z.string().optional(),
   general_setting: z.object({
     docs_link: z.string(),
@@ -85,6 +86,7 @@ export function SystemInfoSection({ defaultValues }: SystemInfoSectionProps) {
     Logo: normalizeValue(defaultValues.Logo),
     Footer: normalizeValue(defaultValues.Footer),
     About: normalizeValue(defaultValues.About),
+    Partners: normalizeValue(defaultValues.Partners),
     HomePageContent: normalizeValue(defaultValues.HomePageContent),
     general_setting: {
       docs_link: normalizeValue(defaultValues.general_setting?.docs_link),
@@ -109,6 +111,7 @@ export function SystemInfoSection({ defaultValues }: SystemInfoSectionProps) {
     Logo: z.string().url().optional().or(z.literal('')),
     Footer: z.string().optional(),
     About: z.string().optional(),
+  Partners: z.string().optional(),
     HomePageContent: z.string().optional(),
     general_setting: z.object({
       docs_link: z.string(),
@@ -287,6 +290,31 @@ export function SystemInfoSection({ defaultValues }: SystemInfoSectionProps) {
                       <Textarea
                         placeholder={t(
                           'Enter HTML code (e.g., <p>About us...</p>) or a URL (e.g., https://example.com) to embed as iframe'
+                        )}
+                        rows={4}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      {t(
+                        'Supports HTML markup or iframe embedding. Enter HTML code directly, or provide a complete URL to automatically embed it as an iframe.'
+                      )}
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name='Partners'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('Partners')}</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder={t(
+                          'Enter HTML code (e.g., <p>Partner with us...</p>) or a URL (e.g., https://example.com) to embed as iframe'
                         )}
                         rows={4}
                         {...field}
