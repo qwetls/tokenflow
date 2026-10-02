@@ -20,7 +20,7 @@ import { Link } from '@tanstack/react-router'
 import { Fragment, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { IconWhatsapp, IconX } from '@/assets/brand-icons'
+import { IconTelegram, IconWhatsapp, IconX } from '@/assets/brand-icons'
 import { useStatus } from '@/hooks/use-status'
 import { useSystemConfig } from '@/hooks/use-system-config'
 import { cn } from '@/lib/utils'
@@ -255,6 +255,15 @@ export function Footer(props: FooterProps) {
                 className='text-muted-foreground/60 hover:text-foreground hover:bg-muted flex size-8 items-center justify-center rounded-lg transition-colors'
               >
                 <IconWhatsapp className='size-4' />
+              </a>
+              <a
+                href='https://t.me/xcloudhost'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Telegram Channel'
+                className='text-muted-foreground/60 hover:text-foreground hover:bg-muted flex size-8 items-center justify-center rounded-lg transition-colors'
+              >
+                <IconTelegram className='size-4' />
               </a>
             </div>
           </div>
