@@ -297,6 +297,15 @@ export function Footer(props: FooterProps) {
               {props.copyright ?? t('footer.defaultCopyright')}
             </span>
             <LegalLinks leadingSeparator />
+            <span aria-hidden='true' className='text-muted-foreground/30'>
+              ·
+            </span>
+            <Link
+              to='/partners'
+              className='hover:text-foreground transition-colors duration-200'
+            >
+              {t('Partners')}
+            </Link>
           </div>
         </div>
       </div>
