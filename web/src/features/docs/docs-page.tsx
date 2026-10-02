@@ -218,7 +218,8 @@ export function DocsPage() {
                 Make your first request.
               </span>{' '}
               Use the examples below with your key. New accounts start with{' '}
-              <InlineCode>$20</InlineCode> of quota (10,000,000).
+              <InlineCode>0</InlineCode> quota — top up with a redeem code on
+              the Top Up page to get started.
             </li>
           </ol>
         </Section>
