@@ -157,3 +157,28 @@ func getDefaultVendorIcon(vendorName string) string {
 	}
 	return ""
 }
+
+// MatchVendorByPattern returns the default vendor display name for a model
+// name using the same longest-pattern-first rules as initDefaultVendorMapping.
+// Returns "" when no pattern matches. Used as a fallback for leaderboard
+// entries whose models are not in the current pricing/metadata set
+// (historical or aliased model names).
+func MatchVendorByPattern(modelName string) string {
+	patterns := make([]string, 0, len(defaultVendorRules))
+	for pattern := range defaultVendorRules {
+		patterns = append(patterns, pattern)
+	}
+	slices.SortFunc(patterns, func(a, b string) int {
+		if len(a) != len(b) {
+			return len(b) - len(a)
+		}
+		return strings.Compare(a, b)
+	})
+	modelLower := strings.ToLower(modelName)
+	for _, pattern := range patterns {
+		if strings.Contains(modelLower, pattern) {
+			return defaultVendorRules[pattern]
+		}
+	}
+	return ""
+}

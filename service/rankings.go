@@ -5,6 +5,7 @@ import (
 	"math"
 	"slices"
 	"sort"
+	"strings"
 	"sync"
 	"time"
 
@@ -20,6 +21,22 @@ const (
 	rankingOthersLabel      = "Others"
 	rankingUnknownVendor    = "Unknown"
 )
+
+// rankingVendorDisplayNames normalizes the pattern-matched vendor names from
+// model.MatchVendorByPattern to the display names used in the vendors table,
+// so historical model names resolve to the same vendor labels as current models.
+var rankingVendorDisplayNames = map[string]string{
+	"智谱":       "Z.AI",
+	"腾讯":       "Tencent",
+	"阿里巴巴":     "Alibaba",
+	"Moonshot": "Moonshot AI",
+	"百度":       "Baidu",
+	"讯飞":       "iFlytek",
+	"零一万物":     "01.AI",
+	"字节跳动":     "ByteDance",
+	"快手":       "Kuaishou",
+	"即梦":       "Jimeng",
+}
 
 type RankingsResponse struct {
 	Models             []RankedModel      `json:"models"`
@@ -257,6 +274,27 @@ func buildRankingModelMeta() map[string]rankingModelMeta {
 func modelMeta(modelName string, meta map[string]rankingModelMeta) rankingModelMeta {
 	if item, ok := meta[modelName]; ok && item.vendor != "" {
 		return item
+	}
+	// Fallback 1: strip :free / -free alias suffixes (e.g. tokenharbor aliases)
+	// and retry the canonical name.
+	canonical := modelName
+	if stripped, ok := strings.CutSuffix(canonical, ":free"); ok {
+		canonical = stripped
+	} else if stripped, ok := strings.CutSuffix(canonical, "-free"); ok {
+		canonical = stripped
+	}
+	if canonical != modelName {
+		if item, ok := meta[canonical]; ok && item.vendor != "" {
+			return item
+		}
+	}
+	// Fallback 2: pattern-match the vendor for historical model names that
+	// are no longer in the pricing set.
+	if vendor := model.MatchVendorByPattern(canonical); vendor != "" {
+		if normalized, ok := rankingVendorDisplayNames[vendor]; ok {
+			vendor = normalized
+		}
+		return rankingModelMeta{vendor: vendor}
 	}
 	return rankingModelMeta{vendor: rankingUnknownVendor}
 }
