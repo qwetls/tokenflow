@@ -67,6 +67,15 @@ func SetApiRouter(router *gin.Engine) {
 		// in Pancake's matching webhook slot; handler enforces env match.
 		apiRouter.POST("/waffo-pancake/webhook/:env", anonymousRequestBodyLimit, controller.WaffoPancakeWebhook)
 
+		// Internal endpoints for the official Telegram bot (shared-secret auth).
+		// No IP rate limit: all bot traffic comes from localhost and the
+		// 256-bit shared secret is the authentication.
+		internalRoute := apiRouter.Group("/internal")
+		{
+			internalRoute.POST("/telegram/redeem", controller.TelegramBotRedeem)
+			internalRoute.POST("/telegram/link", controller.TelegramBotLink)
+		}
+
 		// Universal secure verification routes
 		apiRouter.GET("/verify/methods", middleware.UserAuth(), middleware.DisableCache(), controller.GetVerificationMethods)
 		apiRouter.POST("/verify", middleware.UserAuth(), middleware.CriticalRateLimit(), middleware.UserCriticalRateLimit("security-verification"), middleware.DisableCache(), controller.UniversalVerify)
@@ -132,6 +141,9 @@ func SetApiRouter(router *gin.Engine) {
 				selfRoute.POST("/2fa/enable", middleware.UserCriticalRateLimit("security-verification"), middleware.DisableCache(), controller.Enable2FA)
 				selfRoute.POST("/2fa/disable", middleware.DisableCache(), controller.Disable2FA)
 				selfRoute.POST("/2fa/backup_codes", middleware.DisableCache(), controller.RegenerateBackupCodes)
+
+				// Official Telegram bot: one-time account link code
+				selfRoute.GET("/telegram/link-code", middleware.UserCriticalRateLimit("telegram-link-code"), middleware.DisableCache(), controller.GenerateTelegramLinkCode)
 
 				// Check-in routes
 				selfRoute.GET("/checkin", controller.GetCheckinStatus)

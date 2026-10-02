@@ -350,6 +350,7 @@ func migrateDB() error {
 		&Midjourney{},
 		&TopUp{},
 		&QuotaData{},
+		&TelegramLinkCode{},
 		&Task{},
 		&TaskPlugin{},
 		&Model{},
