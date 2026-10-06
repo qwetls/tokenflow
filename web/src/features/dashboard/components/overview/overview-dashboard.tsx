@@ -64,6 +64,7 @@ import {
   useDashboardContentVisibility,
 } from '../../hooks/use-status-data'
 import { AnnouncementsPanel } from './announcements-panel'
+import { WeekendBuildBanner } from './promo-banner'
 import { ApiInfoPanel } from './api-info-panel'
 import { FAQPanel } from './faq-panel'
 import { PerformanceHealthPanel } from './performance-health-panel'
@@ -816,6 +817,11 @@ export function OverviewDashboard() {
                   {showApiInfoPanel && (
                     <CardStaggerItem>
                       <ApiInfoPanel />
+                    </CardStaggerItem>
+                  )}
+                  {showAnnouncementsPanel && (
+                    <CardStaggerItem>
+                      <WeekendBuildBanner />
                     </CardStaggerItem>
                   )}
                   {showAnnouncementsPanel && (

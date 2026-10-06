@@ -149,6 +149,11 @@ func SetApiRouter(router *gin.Engine) {
 				selfRoute.GET("/checkin", controller.GetCheckinStatus)
 				selfRoute.POST("/checkin", middleware.TurnstileCheck(), controller.DoCheckin)
 
+				// WEEKEND BUILD promo claim (active users only)
+				selfRoute.GET("/promo/weekend-build/status", controller.GetWeekendBuildStatus)
+				selfRoute.GET("/promo/weekend-build/telegram", controller.GetWeekendBuildTelegramStatus)
+				selfRoute.POST("/promo/weekend-build/claim", controller.DoWeekendBuildClaim)
+
 				// Custom OAuth bindings
 				selfRoute.GET("/oauth/bindings", controller.GetUserOAuthBindings)
 				selfRoute.DELETE("/oauth/bindings/:provider_id", controller.UnbindCustomOAuth)

@@ -91,3 +91,52 @@ export async function getUptimeStatus() {
   )
   return res.data
 }
+
+// ----------------------------------------------------------------------------
+// WEEKEND BUILD promo
+// ----------------------------------------------------------------------------
+
+export interface WeekendBuildStatus {
+  promo_key: string
+  eligible: boolean
+  claimed: boolean
+  reasons: string[]
+  quota_grant: number
+  expires_at: number
+}
+
+export interface WeekendBuildTelegramStatus {
+  linked: boolean
+  joined: boolean
+  channel: string
+}
+
+// Get WEEKEND BUILD Telegram link + channel membership state
+export async function getWeekendBuildTelegramStatus() {
+  const res = await api.get<{
+    success: boolean
+    data?: WeekendBuildTelegramStatus
+    message?: string
+  }>('/api/user/promo/weekend-build/telegram')
+  return res.data
+}
+
+// Get WEEKEND BUILD promo eligibility for the current user
+export async function getWeekendBuildStatus() {
+  const res = await api.get<{
+    success: boolean
+    data?: WeekendBuildStatus
+    message?: string
+  }>('/api/user/promo/weekend-build/status')
+  return res.data
+}
+
+// Claim the WEEKEND BUILD promo quota
+export async function claimWeekendBuild() {
+  const res = await api.post<{
+    success: boolean
+    data?: { quota_granted: number }
+    message?: string
+  }>('/api/user/promo/weekend-build/claim')
+  return res.data
+}
