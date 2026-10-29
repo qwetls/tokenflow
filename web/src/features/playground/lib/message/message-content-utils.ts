@@ -59,7 +59,12 @@ function shouldShowMessageContent(
   versionContent: string
 ): boolean {
   return (
-    (message.from === MESSAGE_ROLES.USER || !message.isReasoningStreaming) &&
+    (message.from === MESSAGE_ROLES.USER ||
+      !message.isReasoningStreaming ||
+      // Defensive: once the message is complete, reasoning is definitely
+      // over. A stuck isReasoningStreaming=true must not hide content
+      // (e.g. when stream chunks were dropped before [DONE]).
+      message.status === MESSAGE_STATUS.COMPLETE) &&
     versionContent.length > 0
   )
 }
